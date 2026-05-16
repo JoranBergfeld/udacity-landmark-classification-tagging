@@ -1,0 +1,94 @@
+{
+  "config": {
+    "model": "tl_resnet50",
+    "augmentation": "flip-crop",
+    "optimizer": "adam",
+    "scheduler": "cosine",
+    "epochs": 1,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "image_size": 224,
+    "freeze_backbone": true,
+    "trainable_parameters": 102450,
+    "total_parameters": 23610482
+  },
+  "training": {
+    "train_loss": [
+      2.5663550944785274
+    ],
+    "val_loss": [
+      1.7319170289109642
+    ],
+    "val_accuracy": [
+      67.42323097463284
+    ],
+    "learning_rates": [
+      0.0
+    ],
+    "epoch_times": [
+      45.820481300354004
+    ],
+    "total_time": 45.820481300354004,
+    "best_val_loss": 1.7319170289109642
+  },
+  "evaluation": {
+    "overall_accuracy": 71.36,
+    "top_k_accuracy": {
+      "top_1": 71.36,
+      "top_3": 85.12,
+      "top_5": 89.68
+    },
+    "per_class_accuracy": {
+      "00.Haleakala_National_Park": 32.0,
+      "01.Mount_Rainier_National_Park": 28.000000000000004,
+      "02.Ljubljana_Castle": 88.0,
+      "03.Dead_Sea": 24.0,
+      "04.Wroclaws_Dwarves": 96.0,
+      "05.London_Olympic_Stadium": 76.0,
+      "06.Niagara_Falls": 44.0,
+      "07.Stonehenge": 100.0,
+      "08.Grand_Canyon": 60.0,
+      "09.Golden_Gate_Bridge": 96.0,
+      "10.Edinburgh_Castle": 56.00000000000001,
+      "11.Mount_Rushmore_National_Memorial": 60.0,
+      "12.Kantanagar_Temple": 76.0,
+      "13.Yellowstone_National_Park": 36.0,
+      "14.Terminal_Tower": 84.0,
+      "15.Central_Park": 40.0,
+      "16.Eiffel_Tower": 92.0,
+      "17.Changdeokgung": 52.0,
+      "18.Delicate_Arch": 96.0,
+      "19.Vienna_City_Hall": 84.0,
+      "20.Matterhorn": 80.0,
+      "21.Taj_Mahal": 60.0,
+      "22.Moscow_Raceway": 88.0,
+      "23.Externsteine": 88.0,
+      "24.Soreq_Cave": 100.0,
+      "25.Banff_National_Park": 52.0,
+      "26.Pont_du_Gard": 88.0,
+      "27.Seattle_Japanese_Garden": 88.0,
+      "28.Sydney_Harbour_Bridge": 68.0,
+      "29.Petronas_Towers": 92.0,
+      "30.Brooklyn_Bridge": 60.0,
+      "31.Washington_Monument": 84.0,
+      "32.Hanging_Temple": 76.0,
+      "33.Sydney_Opera_House": 80.0,
+      "34.Great_Barrier_Reef": 80.0,
+      "35.Monumento_a_la_Revolucion": 60.0,
+      "36.Badlands_National_Park": 68.0,
+      "37.Atomium": 84.0,
+      "38.Forth_Bridge": 80.0,
+      "39.Gateway_of_India": 84.0,
+      "40.Stockholm_City_Hall": 44.0,
+      "41.Machu_Picchu": 72.0,
+      "42.Death_Valley_National_Park": 20.0,
+      "43.Gullfoss_Falls": 92.0,
+      "44.Trevi_Fountain": 100.0,
+      "45.Temple_of_Heaven": 44.0,
+      "46.Great_Wall_of_China": 72.0,
+      "47.Prague_Astronomical_Clock": 100.0,
+      "48.Whitby_Abbey": 64.0,
+      "49.Temple_of_Olympian_Zeus": 80.0
+    }
+  }
+}

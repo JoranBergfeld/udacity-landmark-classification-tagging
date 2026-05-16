@@ -1,0 +1,22 @@
+# Remove the data directory cus' it's pretty big and we don't want a big gitlog
+/data
+
+# Python cache files
+__pycache__
+*.pyc
+*.pyo
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore virtual environment directories
+venv/
+.venv/
+
+# Ignore model checkpoints and saved models. The models will flood our git history.
+models/
+
+# Notebook-generated checkpoints at repo root (we don't commit weights)
+/model_scratch.pt
+/model_transfer.pt
+/ignore.pt
