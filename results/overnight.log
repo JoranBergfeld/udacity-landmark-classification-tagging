@@ -1,1100 +1,0 @@
-  Using GPU: NVIDIA GeForce RTX 4060 Ti
-  CUDA: 12.6  |  PyTorch: 2.11.0+cu126
-  GPU memory: 16.0 GB
-
-Planned runs: 36
-  Models:        ['scratch_cnn', 'tl_resnet50', 'tl_convnext', 'tl_efficientnet', 'tl_vit', 'tl_ijepa']
-  Augmentations: ['flip-crop', 'randaug', 'mixup']
-  Optimizers:    ['adamw']
-  Schedulers:    ['cosine', 'warmup-cosine']
-  Epochs:        20  |  batch_size: 32  |  image_size: 224
-
-  Run 1/36
-
-========================================================================
-  RUN: scratch_cnn__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.8860  val_loss: 3.6652  val_acc: 6.54%  lr: 9.94e-04  time: 38.4s *
-  Epoch 2/20 — train_loss: 3.7192  val_loss: 3.5656  val_acc: 8.68%  lr: 9.76e-04  time: 37.3s *
-  Epoch 3/20 — train_loss: 3.6047  val_loss: 3.4893  val_acc: 10.15%  lr: 9.46e-04  time: 37.2s *
-  Epoch 4/20 — train_loss: 3.5571  val_loss: 3.4335  val_acc: 12.95%  lr: 9.05e-04  time: 37.6s *
-  Epoch 5/20 — train_loss: 3.4985  val_loss: 3.3664  val_acc: 14.95%  lr: 8.54e-04  time: 38.0s *
-  Epoch 6/20 — train_loss: 3.4167  val_loss: 3.2795  val_acc: 17.76%  lr: 7.94e-04  time: 37.1s *
-  Epoch 7/20 — train_loss: 3.3989  val_loss: 3.2301  val_acc: 19.36%  lr: 7.27e-04  time: 38.2s *
-  Epoch 8/20 — train_loss: 3.3346  val_loss: 3.1666  val_acc: 20.69%  lr: 6.55e-04  time: 36.8s *
-  Epoch 9/20 — train_loss: 3.2945  val_loss: 3.1568  val_acc: 19.49%  lr: 5.78e-04  time: 36.9s *
-  Epoch 10/20 — train_loss: 3.2497  val_loss: 3.1306  val_acc: 20.43%  lr: 5.00e-04  time: 36.9s *
-  Epoch 11/20 — train_loss: 3.2146  val_loss: 3.0840  val_acc: 22.43%  lr: 4.22e-04  time: 36.8s *
-  Epoch 12/20 — train_loss: 3.1847  val_loss: 3.0356  val_acc: 24.03%  lr: 3.45e-04  time: 36.9s *
-  Epoch 13/20 — train_loss: 3.1417  val_loss: 3.0037  val_acc: 23.10%  lr: 2.73e-04  time: 37.1s *
-  Epoch 14/20 — train_loss: 3.1042  val_loss: 2.9562  val_acc: 24.57%  lr: 2.06e-04  time: 37.3s *
-  Epoch 15/20 — train_loss: 3.0767  val_loss: 2.9227  val_acc: 25.90%  lr: 1.46e-04  time: 37.1s *
-  Epoch 16/20 — train_loss: 3.0498  val_loss: 2.9324  val_acc: 24.83%  lr: 9.55e-05  time: 37.0s
-  Epoch 17/20 — train_loss: 3.0363  val_loss: 2.9052  val_acc: 27.24%  lr: 5.45e-05  time: 37.0s *
-  Epoch 18/20 — train_loss: 2.9897  val_loss: 2.9157  val_acc: 26.03%  lr: 2.45e-05  time: 38.0s
-  Epoch 19/20 — train_loss: 2.9838  val_loss: 2.8807  val_acc: 26.70%  lr: 6.16e-06  time: 37.0s *
-  Epoch 20/20 — train_loss: 2.9814  val_loss: 2.8831  val_acc: 26.97%  lr: 0.00e+00  time: 38.1s
-  Test accuracy: 28.88%  (top-3: 51.36%, top-5: 61.36%)
-  Metrics saved to ./results\scratch_cnn__flip-crop__adamw__cosine__20ep.json
-
-  Run 2/36
-
-========================================================================
-  RUN: scratch_cnn__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.8945  val_loss: 3.7562  val_acc: 7.61%  lr: 5.50e-04  time: 58.3s *
-  Epoch 2/20 — train_loss: 3.7433  val_loss: 3.5530  val_acc: 10.01%  lr: 1.00e-03  time: 37.9s *
-  Epoch 3/20 — train_loss: 3.6523  val_loss: 3.4857  val_acc: 14.55%  lr: 9.92e-04  time: 37.5s *
-  Epoch 4/20 — train_loss: 3.5734  val_loss: 3.3776  val_acc: 16.56%  lr: 9.70e-04  time: 39.0s *
-  Epoch 5/20 — train_loss: 3.4915  val_loss: 3.3269  val_acc: 15.09%  lr: 9.33e-04  time: 37.1s *
-  Epoch 6/20 — train_loss: 3.4419  val_loss: 3.2811  val_acc: 17.49%  lr: 8.83e-04  time: 36.8s *
-  Epoch 7/20 — train_loss: 3.3775  val_loss: 3.2258  val_acc: 17.76%  lr: 8.21e-04  time: 36.9s *
-  Epoch 8/20 — train_loss: 3.3264  val_loss: 3.2635  val_acc: 17.09%  lr: 7.50e-04  time: 36.9s
-  Epoch 9/20 — train_loss: 3.2571  val_loss: 3.0598  val_acc: 21.63%  lr: 6.71e-04  time: 37.2s *
-  Epoch 10/20 — train_loss: 3.2054  val_loss: 3.0510  val_acc: 21.76%  lr: 5.87e-04  time: 38.2s *
-  Epoch 11/20 — train_loss: 3.1673  val_loss: 2.9771  val_acc: 24.83%  lr: 5.00e-04  time: 37.0s *
-  Epoch 12/20 — train_loss: 3.0713  val_loss: 2.9310  val_acc: 24.43%  lr: 4.13e-04  time: 37.3s *
-  Epoch 13/20 — train_loss: 3.0637  val_loss: 2.8973  val_acc: 26.30%  lr: 3.29e-04  time: 37.9s *
-  Epoch 14/20 — train_loss: 3.0024  val_loss: 2.8528  val_acc: 27.10%  lr: 2.50e-04  time: 37.5s *
-  Epoch 15/20 — train_loss: 2.9605  val_loss: 2.8203  val_acc: 28.30%  lr: 1.79e-04  time: 37.3s *
-  Epoch 16/20 — train_loss: 2.9277  val_loss: 2.8122  val_acc: 27.90%  lr: 1.17e-04  time: 36.9s *
-  Epoch 17/20 — train_loss: 2.8866  val_loss: 2.7820  val_acc: 28.04%  lr: 6.70e-05  time: 36.6s *
-  Epoch 18/20 — train_loss: 2.8726  val_loss: 2.7532  val_acc: 29.91%  lr: 3.02e-05  time: 36.9s *
-  Epoch 19/20 — train_loss: 2.8665  val_loss: 2.7523  val_acc: 29.91%  lr: 7.60e-06  time: 37.1s *
-  Epoch 20/20 — train_loss: 2.8408  val_loss: 2.7547  val_acc: 29.91%  lr: 0.00e+00  time: 36.6s
-  Test accuracy: 33.52%  (top-3: 54.40%, top-5: 64.48%)
-  Metrics saved to ./results\scratch_cnn__flip-crop__adamw__warmup-cosine__20ep.json
-
-  Run 3/36
-
-========================================================================
-  RUN: scratch_cnn__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.9664  val_loss: 3.8158  val_acc: 5.34%  lr: 9.94e-04  time: 40.8s *
-  Epoch 2/20 — train_loss: 3.8566  val_loss: 3.7714  val_acc: 5.61%  lr: 9.76e-04  time: 40.3s *
-  Epoch 3/20 — train_loss: 3.7877  val_loss: 3.6294  val_acc: 9.48%  lr: 9.46e-04  time: 40.7s *
-  Epoch 4/20 — train_loss: 3.7452  val_loss: 3.5875  val_acc: 12.15%  lr: 9.05e-04  time: 41.1s *
-  Epoch 5/20 — train_loss: 3.7058  val_loss: 3.5614  val_acc: 10.15%  lr: 8.54e-04  time: 40.8s *
-  Epoch 6/20 — train_loss: 3.6697  val_loss: 3.5277  val_acc: 10.28%  lr: 7.94e-04  time: 41.4s *
-  Epoch 7/20 — train_loss: 3.6402  val_loss: 3.4873  val_acc: 12.95%  lr: 7.27e-04  time: 41.0s *
-  Epoch 8/20 — train_loss: 3.6098  val_loss: 3.4065  val_acc: 14.02%  lr: 6.55e-04  time: 40.9s *
-  Epoch 9/20 — train_loss: 3.5979  val_loss: 3.4102  val_acc: 14.55%  lr: 5.78e-04  time: 40.9s
-  Epoch 10/20 — train_loss: 3.5772  val_loss: 3.3733  val_acc: 15.09%  lr: 5.00e-04  time: 40.0s *
-  Epoch 11/20 — train_loss: 3.5394  val_loss: 3.3133  val_acc: 16.82%  lr: 4.22e-04  time: 39.8s *
-  Epoch 12/20 — train_loss: 3.5004  val_loss: 3.2699  val_acc: 16.69%  lr: 3.45e-04  time: 41.0s *
-  Epoch 13/20 — train_loss: 3.4849  val_loss: 3.2420  val_acc: 16.42%  lr: 2.73e-04  time: 40.1s *
-  Epoch 14/20 — train_loss: 3.4393  val_loss: 3.2119  val_acc: 17.89%  lr: 2.06e-04  time: 40.4s *
-  Epoch 15/20 — train_loss: 3.4112  val_loss: 3.1594  val_acc: 20.69%  lr: 1.46e-04  time: 41.4s *
-  Epoch 16/20 — train_loss: 3.3995  val_loss: 3.1445  val_acc: 21.50%  lr: 9.55e-05  time: 40.6s *
-  Epoch 17/20 — train_loss: 3.3701  val_loss: 3.1221  val_acc: 22.16%  lr: 5.45e-05  time: 40.8s *
-  Epoch 18/20 — train_loss: 3.3229  val_loss: 3.1155  val_acc: 21.36%  lr: 2.45e-05  time: 41.1s *
-  Epoch 19/20 — train_loss: 3.3451  val_loss: 3.1087  val_acc: 20.83%  lr: 6.16e-06  time: 40.6s *
-  Epoch 20/20 — train_loss: 3.3394  val_loss: 3.1145  val_acc: 21.36%  lr: 0.00e+00  time: 40.4s
-  Test accuracy: 23.60%  (top-3: 41.28%, top-5: 52.16%)
-  Metrics saved to ./results\scratch_cnn__randaug__adamw__cosine__20ep.json
-
-  Run 4/36
-
-========================================================================
-  RUN: scratch_cnn__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.9518  val_loss: 3.8212  val_acc: 6.14%  lr: 5.50e-04  time: 41.0s *
-  Epoch 2/20 — train_loss: 3.8332  val_loss: 3.6225  val_acc: 7.34%  lr: 1.00e-03  time: 40.9s *
-  Epoch 3/20 — train_loss: 3.7985  val_loss: 3.6078  val_acc: 10.15%  lr: 9.92e-04  time: 40.4s *
-  Epoch 4/20 — train_loss: 3.7202  val_loss: 3.5089  val_acc: 12.95%  lr: 9.70e-04  time: 41.3s *
-  Epoch 5/20 — train_loss: 3.6672  val_loss: 3.4821  val_acc: 14.55%  lr: 9.33e-04  time: 41.1s *
-  Epoch 6/20 — train_loss: 3.6343  val_loss: 3.4231  val_acc: 13.48%  lr: 8.83e-04  time: 40.9s *
-  Epoch 7/20 — train_loss: 3.6055  val_loss: 3.3599  val_acc: 14.95%  lr: 8.21e-04  time: 41.3s *
-  Epoch 8/20 — train_loss: 3.5712  val_loss: 3.3417  val_acc: 16.56%  lr: 7.50e-04  time: 40.3s *
-  Epoch 9/20 — train_loss: 3.5830  val_loss: 3.3151  val_acc: 17.09%  lr: 6.71e-04  time: 40.8s *
-  Epoch 10/20 — train_loss: 3.5243  val_loss: 3.2873  val_acc: 17.36%  lr: 5.87e-04  time: 42.8s *
-  Epoch 11/20 — train_loss: 3.4548  val_loss: 3.2389  val_acc: 20.16%  lr: 5.00e-04  time: 41.9s *
-  Epoch 12/20 — train_loss: 3.4675  val_loss: 3.2223  val_acc: 18.56%  lr: 4.13e-04  time: 41.0s *
-  Epoch 13/20 — train_loss: 3.4170  val_loss: 3.1902  val_acc: 20.83%  lr: 3.29e-04  time: 40.6s *
-  Epoch 14/20 — train_loss: 3.3798  val_loss: 3.1582  val_acc: 20.03%  lr: 2.50e-04  time: 40.5s *
-  Epoch 15/20 — train_loss: 3.3356  val_loss: 3.1089  val_acc: 21.63%  lr: 1.79e-04  time: 40.1s *
-  Epoch 16/20 — train_loss: 3.3096  val_loss: 3.0726  val_acc: 23.10%  lr: 1.17e-04  time: 41.3s *
-  Epoch 17/20 — train_loss: 3.2872  val_loss: 3.0480  val_acc: 23.50%  lr: 6.70e-05  time: 40.5s *
-  Epoch 18/20 — train_loss: 3.2890  val_loss: 3.0502  val_acc: 23.77%  lr: 3.02e-05  time: 41.4s
-  Epoch 19/20 — train_loss: 3.2620  val_loss: 3.0337  val_acc: 23.90%  lr: 7.60e-06  time: 41.3s *
-  Epoch 20/20 — train_loss: 3.2385  val_loss: 3.0309  val_acc: 24.03%  lr: 0.00e+00  time: 40.9s *
-  Test accuracy: 24.88%  (top-3: 45.84%, top-5: 55.92%)
-  Metrics saved to ./results\scratch_cnn__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 5/36
-
-========================================================================
-  RUN: scratch_cnn__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.9298  val_loss: 3.7861  val_acc: 6.01%  lr: 9.94e-04  time: 38.5s *
-  Epoch 2/20 — train_loss: 3.7737  val_loss: 3.6243  val_acc: 10.15%  lr: 9.76e-04  time: 38.1s *
-  Epoch 3/20 — train_loss: 3.7190  val_loss: 3.5362  val_acc: 12.55%  lr: 9.46e-04  time: 38.0s *
-  Epoch 4/20 — train_loss: 3.6506  val_loss: 3.4685  val_acc: 13.35%  lr: 9.05e-04  time: 38.1s *
-  Epoch 5/20 — train_loss: 3.6035  val_loss: 3.3869  val_acc: 16.42%  lr: 8.54e-04  time: 38.0s *
-  Epoch 6/20 — train_loss: 3.5349  val_loss: 3.3140  val_acc: 17.76%  lr: 7.94e-04  time: 37.7s *
-  Epoch 7/20 — train_loss: 3.5372  val_loss: 3.3048  val_acc: 17.89%  lr: 7.27e-04  time: 38.0s *
-  Epoch 8/20 — train_loss: 3.5136  val_loss: 3.2716  val_acc: 19.23%  lr: 6.55e-04  time: 38.0s *
-  Epoch 9/20 — train_loss: 3.4921  val_loss: 3.2575  val_acc: 19.09%  lr: 5.78e-04  time: 37.9s *
-  Epoch 10/20 — train_loss: 3.4706  val_loss: 3.2326  val_acc: 19.63%  lr: 5.00e-04  time: 38.0s *
-  Epoch 11/20 — train_loss: 3.4260  val_loss: 3.2200  val_acc: 18.83%  lr: 4.22e-04  time: 38.1s *
-  Epoch 12/20 — train_loss: 3.4009  val_loss: 3.1568  val_acc: 20.56%  lr: 3.45e-04  time: 38.2s *
-  Epoch 13/20 — train_loss: 3.3430  val_loss: 3.1312  val_acc: 21.76%  lr: 2.73e-04  time: 37.9s *
-  Epoch 14/20 — train_loss: 3.3406  val_loss: 3.0973  val_acc: 23.10%  lr: 2.06e-04  time: 38.0s *
-  Epoch 15/20 — train_loss: 3.3352  val_loss: 3.1069  val_acc: 23.63%  lr: 1.46e-04  time: 38.0s
-  Epoch 16/20 — train_loss: 3.3060  val_loss: 3.0773  val_acc: 23.36%  lr: 9.55e-05  time: 37.8s *
-  Epoch 17/20 — train_loss: 3.2968  val_loss: 3.0624  val_acc: 22.96%  lr: 5.45e-05  time: 38.3s *
-  Epoch 18/20 — train_loss: 3.2815  val_loss: 3.0513  val_acc: 24.57%  lr: 2.45e-05  time: 37.1s *
-  Epoch 19/20 — train_loss: 3.2823  val_loss: 3.0346  val_acc: 24.83%  lr: 6.16e-06  time: 37.7s *
-  Epoch 20/20 — train_loss: 3.2247  val_loss: 3.0225  val_acc: 25.63%  lr: 0.00e+00  time: 37.4s *
-  Test accuracy: 25.60%  (top-3: 45.68%, top-5: 56.08%)
-  Metrics saved to ./results\scratch_cnn__mixup__adamw__cosine__20ep.json
-
-  Run 6/36
-
-========================================================================
-  RUN: scratch_cnn__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 2,381,010 trainable / 2,381,010 total
-  Epoch 1/20 — train_loss: 3.9097  val_loss: 3.7602  val_acc: 6.41%  lr: 5.50e-04  time: 37.7s *
-  Epoch 2/20 — train_loss: 3.8048  val_loss: 3.5736  val_acc: 8.95%  lr: 1.00e-03  time: 37.0s *
-  Epoch 3/20 — train_loss: 3.7344  val_loss: 3.4855  val_acc: 11.21%  lr: 9.92e-04  time: 37.4s *
-  Epoch 4/20 — train_loss: 3.6311  val_loss: 3.3307  val_acc: 15.75%  lr: 9.70e-04  time: 37.3s *
-  Epoch 5/20 — train_loss: 3.5826  val_loss: 3.3608  val_acc: 14.82%  lr: 9.33e-04  time: 37.1s
-  Epoch 6/20 — train_loss: 3.4997  val_loss: 3.2404  val_acc: 18.83%  lr: 8.83e-04  time: 37.4s *
-  Epoch 7/20 — train_loss: 3.4439  val_loss: 3.1939  val_acc: 19.36%  lr: 8.21e-04  time: 37.0s *
-  Epoch 8/20 — train_loss: 3.4048  val_loss: 3.1690  val_acc: 18.42%  lr: 7.50e-04  time: 37.0s *
-  Epoch 9/20 — train_loss: 3.3809  val_loss: 3.1461  val_acc: 20.56%  lr: 6.71e-04  time: 37.0s *
-  Epoch 10/20 — train_loss: 3.3232  val_loss: 3.0519  val_acc: 22.83%  lr: 5.87e-04  time: 37.3s *
-  Epoch 11/20 — train_loss: 3.2675  val_loss: 3.0072  val_acc: 25.77%  lr: 5.00e-04  time: 37.1s *
-  Epoch 12/20 — train_loss: 3.2291  val_loss: 2.9501  val_acc: 25.77%  lr: 4.13e-04  time: 36.9s *
-  Epoch 13/20 — train_loss: 3.2390  val_loss: 2.9191  val_acc: 27.24%  lr: 3.29e-04  time: 36.8s *
-  Epoch 14/20 — train_loss: 3.1788  val_loss: 2.8646  val_acc: 28.84%  lr: 2.50e-04  time: 37.1s *
-  Epoch 15/20 — train_loss: 3.1838  val_loss: 2.8447  val_acc: 29.37%  lr: 1.79e-04  time: 36.9s *
-  Epoch 16/20 — train_loss: 3.0763  val_loss: 2.8277  val_acc: 29.64%  lr: 1.17e-04  time: 37.1s *
-  Epoch 17/20 — train_loss: 3.1315  val_loss: 2.7933  val_acc: 30.04%  lr: 6.70e-05  time: 37.2s *
-  Epoch 18/20 — train_loss: 3.0706  val_loss: 2.7769  val_acc: 30.84%  lr: 3.02e-05  time: 37.1s *
-  Epoch 19/20 — train_loss: 3.0531  val_loss: 2.7731  val_acc: 30.97%  lr: 7.60e-06  time: 37.4s *
-  Epoch 20/20 — train_loss: 3.0728  val_loss: 2.7609  val_acc: 31.64%  lr: 0.00e+00  time: 36.9s *
-  Test accuracy: 35.68%  (top-3: 54.56%, top-5: 65.36%)
-  Metrics saved to ./results\scratch_cnn__mixup__adamw__warmup-cosine__20ep.json
-
-  Run 7/36
-
-========================================================================
-  RUN: tl_resnet50__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 2.5728  val_loss: 1.7135  val_acc: 68.62%  lr: 9.94e-04  time: 37.6s *
-  Epoch 2/20 — train_loss: 1.3828  val_loss: 1.2737  val_acc: 72.76%  lr: 9.76e-04  time: 37.6s *
-  Epoch 3/20 — train_loss: 1.0087  val_loss: 1.0853  val_acc: 75.17%  lr: 9.46e-04  time: 36.4s *
-  Epoch 4/20 — train_loss: 0.8209  val_loss: 1.0054  val_acc: 77.30%  lr: 9.05e-04  time: 37.7s *
-  Epoch 5/20 — train_loss: 0.6980  val_loss: 0.9096  val_acc: 78.64%  lr: 8.54e-04  time: 36.8s *
-  Epoch 6/20 — train_loss: 0.6084  val_loss: 0.8872  val_acc: 78.77%  lr: 7.94e-04  time: 37.2s *
-  Epoch 7/20 — train_loss: 0.5314  val_loss: 0.8439  val_acc: 79.31%  lr: 7.27e-04  time: 37.1s *
-  Epoch 8/20 — train_loss: 0.4811  val_loss: 0.8384  val_acc: 80.11%  lr: 6.55e-04  time: 36.3s *
-  Epoch 9/20 — train_loss: 0.4416  val_loss: 0.8071  val_acc: 79.84%  lr: 5.78e-04  time: 37.1s *
-  Epoch 10/20 — train_loss: 0.4083  val_loss: 0.8068  val_acc: 79.44%  lr: 5.00e-04  time: 36.7s *
-  Epoch 11/20 — train_loss: 0.3842  val_loss: 0.7926  val_acc: 79.57%  lr: 4.22e-04  time: 36.8s *
-  Epoch 12/20 — train_loss: 0.3567  val_loss: 0.7908  val_acc: 80.11%  lr: 3.45e-04  time: 37.0s *
-  Epoch 13/20 — train_loss: 0.3357  val_loss: 0.7886  val_acc: 80.37%  lr: 2.73e-04  time: 36.5s *
-  Epoch 14/20 — train_loss: 0.3342  val_loss: 0.7708  val_acc: 81.17%  lr: 2.06e-04  time: 36.6s *
-  Epoch 15/20 — train_loss: 0.3058  val_loss: 0.7577  val_acc: 81.31%  lr: 1.46e-04  time: 37.1s *
-  Epoch 16/20 — train_loss: 0.3043  val_loss: 0.7594  val_acc: 80.77%  lr: 9.55e-05  time: 36.9s
-  Epoch 17/20 — train_loss: 0.3130  val_loss: 0.7628  val_acc: 81.17%  lr: 5.45e-05  time: 37.1s
-  Epoch 18/20 — train_loss: 0.2914  val_loss: 0.7631  val_acc: 80.64%  lr: 2.45e-05  time: 36.3s
-  Epoch 19/20 — train_loss: 0.2932  val_loss: 0.7526  val_acc: 81.04%  lr: 6.16e-06  time: 37.2s *
-  Epoch 20/20 — train_loss: 0.2914  val_loss: 0.7672  val_acc: 81.17%  lr: 0.00e+00  time: 36.7s
-  Test accuracy: 81.36%  (top-3: 91.44%, top-5: 93.76%)
-  Metrics saved to ./results\tl_resnet50__flip-crop__adamw__cosine__20ep.json
-
-  Run 8/36
-
-========================================================================
-  RUN: tl_resnet50__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 3.7020  val_loss: 3.4926  val_acc: 36.85%  lr: 5.50e-04  time: 36.4s *
-  Epoch 2/20 — train_loss: 2.7388  val_loss: 2.1771  val_acc: 66.76%  lr: 1.00e-03  time: 37.6s *
-  Epoch 3/20 — train_loss: 1.6495  val_loss: 1.4181  val_acc: 71.70%  lr: 9.92e-04  time: 37.2s *
-  Epoch 4/20 — train_loss: 1.1304  val_loss: 1.1499  val_acc: 74.77%  lr: 9.70e-04  time: 36.7s *
-  Epoch 5/20 — train_loss: 0.8839  val_loss: 1.0177  val_acc: 77.04%  lr: 9.33e-04  time: 37.4s *
-  Epoch 6/20 — train_loss: 0.7478  val_loss: 0.9726  val_acc: 77.17%  lr: 8.83e-04  time: 36.9s *
-  Epoch 7/20 — train_loss: 0.6457  val_loss: 0.9220  val_acc: 78.37%  lr: 8.21e-04  time: 36.5s *
-  Epoch 8/20 — train_loss: 0.5737  val_loss: 0.8776  val_acc: 79.04%  lr: 7.50e-04  time: 36.2s *
-  Epoch 9/20 — train_loss: 0.5140  val_loss: 0.8648  val_acc: 79.71%  lr: 6.71e-04  time: 37.1s *
-  Epoch 10/20 — train_loss: 0.4670  val_loss: 0.8189  val_acc: 81.04%  lr: 5.87e-04  time: 36.6s *
-  Epoch 11/20 — train_loss: 0.4279  val_loss: 0.8133  val_acc: 80.91%  lr: 5.00e-04  time: 36.9s *
-  Epoch 12/20 — train_loss: 0.4073  val_loss: 0.8116  val_acc: 79.97%  lr: 4.13e-04  time: 36.7s *
-  Epoch 13/20 — train_loss: 0.3678  val_loss: 0.8001  val_acc: 81.31%  lr: 3.29e-04  time: 37.0s *
-  Epoch 14/20 — train_loss: 0.3674  val_loss: 0.7897  val_acc: 81.58%  lr: 2.50e-04  time: 37.2s *
-  Epoch 15/20 — train_loss: 0.3480  val_loss: 0.7801  val_acc: 81.58%  lr: 1.79e-04  time: 37.5s *
-  Epoch 16/20 — train_loss: 0.3340  val_loss: 0.7922  val_acc: 81.17%  lr: 1.17e-04  time: 36.9s
-  Epoch 17/20 — train_loss: 0.3287  val_loss: 0.7786  val_acc: 81.17%  lr: 6.70e-05  time: 36.9s *
-  Epoch 18/20 — train_loss: 0.3220  val_loss: 0.7821  val_acc: 81.31%  lr: 3.02e-05  time: 37.7s
-  Epoch 19/20 — train_loss: 0.3163  val_loss: 0.7911  val_acc: 80.64%  lr: 7.60e-06  time: 36.5s
-  Epoch 20/20 — train_loss: 0.3247  val_loss: 0.7855  val_acc: 80.77%  lr: 0.00e+00  time: 36.7s
-  Test accuracy: 81.28%  (top-3: 91.44%, top-5: 93.84%)
-  Metrics saved to ./results\tl_resnet50__flip-crop__adamw__warmup-cosine__20ep.json
-
-  Run 9/36
-
-========================================================================
-  RUN: tl_resnet50__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 2.6776  val_loss: 1.7492  val_acc: 69.03%  lr: 9.94e-04  time: 41.2s *
-  Epoch 2/20 — train_loss: 1.4922  val_loss: 1.2589  val_acc: 73.97%  lr: 9.76e-04  time: 40.6s *
-  Epoch 3/20 — train_loss: 1.1203  val_loss: 1.0789  val_acc: 75.57%  lr: 9.46e-04  time: 41.1s *
-  Epoch 4/20 — train_loss: 0.9213  val_loss: 0.9667  val_acc: 77.30%  lr: 9.05e-04  time: 41.2s *
-  Epoch 5/20 — train_loss: 0.7941  val_loss: 0.9267  val_acc: 77.44%  lr: 8.54e-04  time: 41.9s *
-  Epoch 6/20 — train_loss: 0.6989  val_loss: 0.8752  val_acc: 78.24%  lr: 7.94e-04  time: 41.4s *
-  Epoch 7/20 — train_loss: 0.6248  val_loss: 0.8465  val_acc: 78.91%  lr: 7.27e-04  time: 42.0s *
-  Epoch 8/20 — train_loss: 0.5737  val_loss: 0.8228  val_acc: 79.31%  lr: 6.55e-04  time: 40.5s *
-  Epoch 9/20 — train_loss: 0.5356  val_loss: 0.8062  val_acc: 79.17%  lr: 5.78e-04  time: 41.5s *
-  Epoch 10/20 — train_loss: 0.5088  val_loss: 0.7992  val_acc: 79.84%  lr: 5.00e-04  time: 41.4s *
-  Epoch 11/20 — train_loss: 0.4732  val_loss: 0.7831  val_acc: 79.71%  lr: 4.22e-04  time: 40.7s *
-  Epoch 12/20 — train_loss: 0.4495  val_loss: 0.7772  val_acc: 80.24%  lr: 3.45e-04  time: 40.9s *
-  Epoch 13/20 — train_loss: 0.4239  val_loss: 0.7653  val_acc: 81.04%  lr: 2.73e-04  time: 41.2s *
-  Epoch 14/20 — train_loss: 0.4152  val_loss: 0.7655  val_acc: 81.04%  lr: 2.06e-04  time: 41.1s
-  Epoch 15/20 — train_loss: 0.3999  val_loss: 0.7644  val_acc: 80.24%  lr: 1.46e-04  time: 41.6s *
-  Epoch 16/20 — train_loss: 0.3985  val_loss: 0.7585  val_acc: 80.77%  lr: 9.55e-05  time: 41.0s *
-  Epoch 17/20 — train_loss: 0.3843  val_loss: 0.7628  val_acc: 80.64%  lr: 5.45e-05  time: 41.2s
-  Epoch 18/20 — train_loss: 0.3893  val_loss: 0.7591  val_acc: 80.24%  lr: 2.45e-05  time: 41.1s
-  Epoch 19/20 — train_loss: 0.3829  val_loss: 0.7690  val_acc: 80.24%  lr: 6.16e-06  time: 41.7s
-  Epoch 20/20 — train_loss: 0.3798  val_loss: 0.7614  val_acc: 80.51%  lr: 0.00e+00  time: 41.1s
-  Test accuracy: 83.20%  (top-3: 92.00%, top-5: 94.64%)
-  Metrics saved to ./results\tl_resnet50__randaug__adamw__cosine__20ep.json
-
-  Run 10/36
-
-========================================================================
-  RUN: tl_resnet50__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 3.7159  val_loss: 3.4960  val_acc: 38.05%  lr: 5.50e-04  time: 41.7s *
-  Epoch 2/20 — train_loss: 2.8169  val_loss: 2.2032  val_acc: 64.75%  lr: 1.00e-03  time: 41.5s *
-  Epoch 3/20 — train_loss: 1.7768  val_loss: 1.4408  val_acc: 71.03%  lr: 9.92e-04  time: 41.0s *
-  Epoch 4/20 — train_loss: 1.2430  val_loss: 1.1598  val_acc: 74.77%  lr: 9.70e-04  time: 41.2s *
-  Epoch 5/20 — train_loss: 0.9910  val_loss: 1.0337  val_acc: 75.43%  lr: 9.33e-04  time: 40.2s *
-  Epoch 6/20 — train_loss: 0.8595  val_loss: 0.9590  val_acc: 77.30%  lr: 8.83e-04  time: 41.0s *
-  Epoch 7/20 — train_loss: 0.7580  val_loss: 0.9065  val_acc: 77.70%  lr: 8.21e-04  time: 41.9s *
-  Epoch 8/20 — train_loss: 0.6591  val_loss: 0.8551  val_acc: 79.57%  lr: 7.50e-04  time: 41.5s *
-  Epoch 9/20 — train_loss: 0.6089  val_loss: 0.8355  val_acc: 79.17%  lr: 6.71e-04  time: 41.2s *
-  Epoch 10/20 — train_loss: 0.5588  val_loss: 0.8277  val_acc: 79.71%  lr: 5.87e-04  time: 41.0s *
-  Epoch 11/20 — train_loss: 0.5250  val_loss: 0.7998  val_acc: 79.57%  lr: 5.00e-04  time: 41.2s *
-  Epoch 12/20 — train_loss: 0.4905  val_loss: 0.7897  val_acc: 79.57%  lr: 4.13e-04  time: 41.3s *
-  Epoch 13/20 — train_loss: 0.4749  val_loss: 0.7890  val_acc: 79.97%  lr: 3.29e-04  time: 41.6s *
-  Epoch 14/20 — train_loss: 0.4477  val_loss: 0.7838  val_acc: 79.44%  lr: 2.50e-04  time: 41.2s *
-  Epoch 15/20 — train_loss: 0.4288  val_loss: 0.7731  val_acc: 79.84%  lr: 1.79e-04  time: 41.4s *
-  Epoch 16/20 — train_loss: 0.4205  val_loss: 0.7758  val_acc: 79.97%  lr: 1.17e-04  time: 41.4s
-  Epoch 17/20 — train_loss: 0.4078  val_loss: 0.7736  val_acc: 79.17%  lr: 6.70e-05  time: 41.1s
-  Epoch 18/20 — train_loss: 0.4119  val_loss: 0.7711  val_acc: 79.84%  lr: 3.02e-05  time: 41.5s *
-  Epoch 19/20 — train_loss: 0.4175  val_loss: 0.7654  val_acc: 80.11%  lr: 7.60e-06  time: 41.3s *
-  Epoch 20/20 — train_loss: 0.3957  val_loss: 0.7699  val_acc: 80.11%  lr: 0.00e+00  time: 40.8s
-  Test accuracy: 82.72%  (top-3: 92.08%, top-5: 94.40%)
-  Metrics saved to ./results\tl_resnet50__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 11/36
-
-========================================================================
-  RUN: tl_resnet50__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 2.8433  val_loss: 1.9052  val_acc: 65.42%  lr: 9.94e-04  time: 36.2s *
-  Epoch 2/20 — train_loss: 1.8312  val_loss: 1.4294  val_acc: 72.36%  lr: 9.76e-04  time: 36.6s *
-  Epoch 3/20 — train_loss: 1.4840  val_loss: 1.1689  val_acc: 74.50%  lr: 9.46e-04  time: 36.7s *
-  Epoch 4/20 — train_loss: 1.3858  val_loss: 1.1000  val_acc: 77.17%  lr: 9.05e-04  time: 37.0s *
-  Epoch 5/20 — train_loss: 1.2991  val_loss: 1.0213  val_acc: 78.64%  lr: 8.54e-04  time: 36.7s *
-  Epoch 6/20 — train_loss: 1.2306  val_loss: 0.9672  val_acc: 78.91%  lr: 7.94e-04  time: 36.5s *
-  Epoch 7/20 — train_loss: 1.1484  val_loss: 0.9485  val_acc: 79.04%  lr: 7.27e-04  time: 36.6s *
-  Epoch 8/20 — train_loss: 1.1512  val_loss: 0.9183  val_acc: 79.97%  lr: 6.55e-04  time: 36.8s *
-  Epoch 9/20 — train_loss: 0.9809  val_loss: 0.8934  val_acc: 80.24%  lr: 5.78e-04  time: 36.5s *
-  Epoch 10/20 — train_loss: 1.1002  val_loss: 0.8954  val_acc: 79.17%  lr: 5.00e-04  time: 37.4s
-  Epoch 11/20 — train_loss: 1.0218  val_loss: 0.9497  val_acc: 79.71%  lr: 4.22e-04  time: 40.3s
-  Epoch 12/20 — train_loss: 1.1044  val_loss: 0.9266  val_acc: 81.58%  lr: 3.45e-04  time: 42.5s
-  Epoch 13/20 — train_loss: 1.1400  val_loss: 0.8781  val_acc: 81.98%  lr: 2.73e-04  time: 42.1s *
-  Epoch 14/20 — train_loss: 0.9280  val_loss: 0.8806  val_acc: 81.84%  lr: 2.06e-04  time: 43.8s
-  Epoch 15/20 — train_loss: 0.9511  val_loss: 0.8451  val_acc: 81.58%  lr: 1.46e-04  time: 43.6s *
-  Epoch 16/20 — train_loss: 0.8632  val_loss: 0.8794  val_acc: 81.84%  lr: 9.55e-05  time: 39.8s
-  Epoch 17/20 — train_loss: 0.8700  val_loss: 0.8541  val_acc: 81.84%  lr: 5.45e-05  time: 40.0s
-  Epoch 18/20 — train_loss: 0.9057  val_loss: 0.8531  val_acc: 81.98%  lr: 2.45e-05  time: 40.5s
-  Epoch 19/20 — train_loss: 0.8876  val_loss: 0.8394  val_acc: 82.24%  lr: 6.16e-06  time: 38.9s *
-  Epoch 20/20 — train_loss: 0.9262  val_loss: 0.8287  val_acc: 82.38%  lr: 0.00e+00  time: 37.7s *
-  Test accuracy: 81.84%  (top-3: 91.92%, top-5: 94.16%)
-  Metrics saved to ./results\tl_resnet50__mixup__adamw__cosine__20ep.json
-
-  Run 12/36
-
-========================================================================
-  RUN: tl_resnet50__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 102,450 trainable / 23,610,482 total
-  Epoch 1/20 — train_loss: 3.7452  val_loss: 3.5429  val_acc: 37.25%  lr: 5.50e-04  time: 38.3s *
-  Epoch 2/20 — train_loss: 2.9910  val_loss: 2.3770  val_acc: 64.22%  lr: 1.00e-03  time: 41.7s *
-  Epoch 3/20 — train_loss: 2.0993  val_loss: 1.5820  val_acc: 70.09%  lr: 9.92e-04  time: 43.9s *
-  Epoch 4/20 — train_loss: 1.6597  val_loss: 1.2996  val_acc: 72.36%  lr: 9.70e-04  time: 41.1s *
-  Epoch 5/20 — train_loss: 1.4527  val_loss: 1.1377  val_acc: 74.77%  lr: 9.33e-04  time: 40.6s *
-  Epoch 6/20 — train_loss: 1.3204  val_loss: 1.0703  val_acc: 76.64%  lr: 8.83e-04  time: 40.1s *
-  Epoch 7/20 — train_loss: 1.2277  val_loss: 1.0296  val_acc: 76.64%  lr: 8.21e-04  time: 39.6s *
-  Epoch 8/20 — train_loss: 1.1075  val_loss: 0.9867  val_acc: 77.84%  lr: 7.50e-04  time: 40.3s *
-  Epoch 9/20 — train_loss: 1.1680  val_loss: 0.9458  val_acc: 78.77%  lr: 6.71e-04  time: 41.9s *
-  Epoch 10/20 — train_loss: 0.9949  val_loss: 0.9201  val_acc: 79.04%  lr: 5.87e-04  time: 41.0s *
-  Epoch 11/20 — train_loss: 1.0099  val_loss: 0.9007  val_acc: 79.84%  lr: 5.00e-04  time: 41.6s *
-  Epoch 12/20 — train_loss: 1.0191  val_loss: 0.9392  val_acc: 78.91%  lr: 4.13e-04  time: 42.5s
-  Epoch 13/20 — train_loss: 1.0289  val_loss: 0.9034  val_acc: 79.44%  lr: 3.29e-04  time: 40.5s
-  Epoch 14/20 — train_loss: 0.9858  val_loss: 0.8933  val_acc: 79.44%  lr: 2.50e-04  time: 39.0s *
-  Epoch 15/20 — train_loss: 1.0141  val_loss: 0.8822  val_acc: 80.24%  lr: 1.79e-04  time: 38.1s *
-  Epoch 16/20 — train_loss: 0.8942  val_loss: 0.8594  val_acc: 80.51%  lr: 1.17e-04  time: 37.5s *
-  Epoch 17/20 — train_loss: 0.9364  val_loss: 0.9009  val_acc: 79.57%  lr: 6.70e-05  time: 39.8s
-  Epoch 18/20 — train_loss: 1.0114  val_loss: 0.8967  val_acc: 80.51%  lr: 3.02e-05  time: 40.6s
-  Epoch 19/20 — train_loss: 0.9155  val_loss: 0.8846  val_acc: 80.37%  lr: 7.60e-06  time: 40.5s
-  Epoch 20/20 — train_loss: 0.9688  val_loss: 0.9495  val_acc: 79.71%  lr: 0.00e+00  time: 41.2s
-  Test accuracy: 81.84%  (top-3: 91.68%, top-5: 93.92%)
-  Metrics saved to ./results\tl_resnet50__mixup__adamw__warmup-cosine__20ep.json
-
-  Run 13/36
-
-========================================================================
-  RUN: tl_convnext__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-Downloading: "https://download.pytorch.org/models/convnext_tiny-983f1562.pth" to C:\Users\joran/.cache\torch\hub\checkpoints\convnext_tiny-983f1562.pth
-  0%|          | 0.00/109M [00:00<?, ?B/s]  1%|          | 896k/109M [00:00<00:12, 8.91MB/s]  2%|1         | 2.12M/109M [00:00<00:10, 11.2MB/s]  3%|3         | 3.38M/109M [00:00<00:09, 11.4MB/s]  4%|4         | 4.62M/109M [00:00<00:09, 11.6MB/s]  5%|5         | 5.88M/109M [00:00<00:09, 11.8MB/s]  6%|6         | 7.00M/109M [00:00<00:09, 11.6MB/s]  8%|7         | 8.25M/109M [00:00<00:09, 11.7MB/s]  9%|8         | 9.50M/109M [00:00<00:08, 11.8MB/s] 10%|9         | 10.8M/109M [00:00<00:08, 11.9MB/s] 11%|#         | 12.0M/109M [00:01<00:08, 12.0MB/s] 12%|#2        | 13.2M/109M [00:01<00:08, 12.1MB/s] 13%|#3        | 14.5M/109M [00:01<00:08, 12.0MB/s] 14%|#4        | 15.8M/109M [00:01<00:08, 12.0MB/s] 16%|#5        | 17.0M/109M [00:01<00:08, 11.9MB/s] 17%|#6        | 18.2M/109M [00:01<00:08, 11.9MB/s] 18%|#7        | 19.5M/109M [00:01<00:07, 11.8MB/s] 19%|#9        | 20.8M/109M [00:01<00:07, 11.9MB/s] 20%|##        | 22.0M/109M [00:01<00:07, 11.8MB/s] 21%|##1       | 23.2M/109M [00:02<00:07, 11.8MB/s] 22%|##2       | 24.5M/109M [00:02<00:07, 11.8MB/s] 24%|##3       | 25.8M/109M [00:02<00:07, 11.8MB/s] 25%|##4       | 27.0M/109M [00:02<00:07, 11.8MB/s] 26%|##5       | 28.2M/109M [00:02<00:07, 11.4MB/s] 27%|##7       | 29.5M/109M [00:02<00:07, 11.5MB/s] 28%|##8       | 30.8M/109M [00:02<00:07, 11.7MB/s] 29%|##9       | 31.9M/109M [00:02<00:07, 11.5MB/s] 30%|###       | 33.1M/109M [00:02<00:06, 11.7MB/s] 32%|###1      | 34.4M/109M [00:03<00:06, 11.9MB/s] 33%|###2      | 35.6M/109M [00:03<00:06, 11.9MB/s] 34%|###3      | 36.9M/109M [00:03<00:06, 12.0MB/s] 35%|###4      | 38.1M/109M [00:03<00:06, 12.0MB/s] 36%|###6      | 39.4M/109M [00:03<00:06, 12.0MB/s] 37%|###7      | 40.6M/109M [00:03<00:06, 11.9MB/s] 38%|###8      | 41.9M/109M [00:03<00:05, 11.9MB/s] 40%|###9      | 43.1M/109M [00:03<00:05, 11.9MB/s] 41%|####      | 44.4M/109M [00:03<00:05, 11.8MB/s] 42%|####1     | 45.6M/109M [00:04<00:05, 11.8MB/s] 43%|####2     | 46.9M/109M [00:04<00:05, 11.9MB/s] 44%|####4     | 48.1M/109M [00:04<00:05, 11.8MB/s] 45%|####5     | 49.4M/109M [00:04<00:05, 11.8MB/s] 46%|####6     | 50.6M/109M [00:04<00:05, 11.8MB/s] 48%|####7     | 51.9M/109M [00:04<00:05, 11.3MB/s] 49%|####8     | 53.1M/109M [00:04<00:05, 11.5MB/s] 50%|####9     | 54.4M/109M [00:04<00:04, 11.7MB/s] 51%|#####     | 55.6M/109M [00:04<00:04, 11.8MB/s] 52%|#####2    | 56.9M/109M [00:05<00:04, 12.0MB/s] 53%|#####3    | 58.1M/109M [00:05<00:04, 12.0MB/s] 54%|#####4    | 59.4M/109M [00:05<00:04, 12.0MB/s] 56%|#####5    | 60.6M/109M [00:05<00:04, 11.9MB/s] 57%|#####6    | 61.9M/109M [00:05<00:04, 11.9MB/s] 58%|#####7    | 63.1M/109M [00:05<00:04, 11.9MB/s] 59%|#####8    | 64.4M/109M [00:05<00:03, 11.9MB/s] 60%|######    | 65.6M/109M [00:05<00:03, 11.9MB/s] 61%|######1   | 66.9M/109M [00:05<00:03, 11.8MB/s] 62%|######2   | 68.1M/109M [00:06<00:03, 11.8MB/s] 64%|######3   | 69.4M/109M [00:06<00:03, 11.8MB/s] 65%|######4   | 70.6M/109M [00:06<00:03, 11.8MB/s] 66%|######5   | 71.9M/109M [00:06<00:03, 11.4MB/s] 67%|######7   | 73.1M/109M [00:06<00:03, 11.5MB/s] 68%|######8   | 74.4M/109M [00:06<00:03, 11.7MB/s] 69%|######9   | 75.6M/109M [00:06<00:02, 11.8MB/s] 70%|#######   | 76.9M/109M [00:06<00:02, 11.9MB/s] 72%|#######1  | 78.1M/109M [00:06<00:02, 12.0MB/s] 73%|#######2  | 79.4M/109M [00:07<00:02, 12.0MB/s] 74%|#######3  | 80.6M/109M [00:07<00:02, 12.0MB/s] 75%|#######5  | 81.9M/109M [00:07<00:02, 11.9MB/s] 76%|#######6  | 83.1M/109M [00:07<00:02, 11.8MB/s] 77%|#######7  | 84.4M/109M [00:07<00:02, 11.9MB/s] 78%|#######8  | 85.6M/109M [00:07<00:02, 11.8MB/s] 80%|#######9  | 86.9M/109M [00:07<00:01, 11.8MB/s] 81%|########  | 88.1M/109M [00:07<00:01, 11.8MB/s] 82%|########1 | 89.4M/109M [00:07<00:01, 11.8MB/s] 83%|########3 | 90.6M/109M [00:08<00:01, 11.8MB/s] 84%|########4 | 91.9M/109M [00:08<00:01, 11.8MB/s] 85%|########5 | 93.1M/109M [00:08<00:01, 11.8MB/s] 86%|########6 | 94.4M/109M [00:08<00:01, 11.8MB/s] 88%|########7 | 95.5M/109M [00:08<00:01, 11.8MB/s] 89%|########8 | 96.8M/109M [00:08<00:01, 11.8MB/s] 90%|########9 | 98.0M/109M [00:08<00:00, 11.8MB/s] 91%|######### | 99.2M/109M [00:08<00:00, 11.3MB/s] 92%|#########2| 100M/109M [00:08<00:00, 11.5MB/s]  93%|#########3| 102M/109M [00:09<00:00, 11.6MB/s] 94%|#########4| 103M/109M [00:09<00:00, 11.8MB/s] 95%|#########5| 104M/109M [00:09<00:00, 11.6MB/s] 96%|#########6| 105M/109M [00:09<00:00, 11.3MB/s] 98%|#########7| 107M/109M [00:09<00:00, 11.9MB/s] 99%|#########8| 108M/109M [00:09<00:00, 12.0MB/s]100%|##########| 109M/109M [00:09<00:00, 12.2MB/s]100%|##########| 109M/109M [00:09<00:00, 11.8MB/s]
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 2.0580  val_loss: 1.1550  val_acc: 76.23%  lr: 9.94e-04  time: 48.5s *
-  Epoch 2/20 — train_loss: 0.9338  val_loss: 0.8601  val_acc: 79.44%  lr: 9.76e-04  time: 41.0s *
-  Epoch 3/20 — train_loss: 0.6910  val_loss: 0.7653  val_acc: 80.64%  lr: 9.46e-04  time: 39.1s *
-  Epoch 4/20 — train_loss: 0.5586  val_loss: 0.6979  val_acc: 82.51%  lr: 9.05e-04  time: 37.6s *
-  Epoch 5/20 — train_loss: 0.4727  val_loss: 0.6634  val_acc: 83.44%  lr: 8.54e-04  time: 37.8s *
-  Epoch 6/20 — train_loss: 0.4120  val_loss: 0.6358  val_acc: 83.98%  lr: 7.94e-04  time: 38.1s *
-  Epoch 7/20 — train_loss: 0.3616  val_loss: 0.6205  val_acc: 84.51%  lr: 7.27e-04  time: 37.7s *
-  Epoch 8/20 — train_loss: 0.3195  val_loss: 0.6196  val_acc: 83.98%  lr: 6.55e-04  time: 38.8s *
-  Epoch 9/20 — train_loss: 0.2955  val_loss: 0.6084  val_acc: 84.11%  lr: 5.78e-04  time: 38.1s *
-  Epoch 10/20 — train_loss: 0.2819  val_loss: 0.6038  val_acc: 83.58%  lr: 5.00e-04  time: 36.6s *
-  Epoch 11/20 — train_loss: 0.2567  val_loss: 0.5951  val_acc: 84.25%  lr: 4.22e-04  time: 37.1s *
-  Epoch 12/20 — train_loss: 0.2481  val_loss: 0.5922  val_acc: 84.51%  lr: 3.45e-04  time: 37.9s *
-  Epoch 13/20 — train_loss: 0.2238  val_loss: 0.5880  val_acc: 84.11%  lr: 2.73e-04  time: 38.0s *
-  Epoch 14/20 — train_loss: 0.2214  val_loss: 0.5873  val_acc: 84.38%  lr: 2.06e-04  time: 38.0s *
-  Epoch 15/20 — train_loss: 0.2181  val_loss: 0.5844  val_acc: 84.65%  lr: 1.46e-04  time: 38.3s *
-  Epoch 16/20 — train_loss: 0.2163  val_loss: 0.5844  val_acc: 84.91%  lr: 9.55e-05  time: 38.9s *
-  Epoch 17/20 — train_loss: 0.2036  val_loss: 0.5827  val_acc: 84.78%  lr: 5.45e-05  time: 38.6s *
-  Epoch 18/20 — train_loss: 0.2050  val_loss: 0.5822  val_acc: 84.51%  lr: 2.45e-05  time: 38.6s *
-  Epoch 19/20 — train_loss: 0.2000  val_loss: 0.5818  val_acc: 84.38%  lr: 6.16e-06  time: 37.5s *
-  Epoch 20/20 — train_loss: 0.2017  val_loss: 0.5819  val_acc: 84.38%  lr: 0.00e+00  time: 37.3s
-  Test accuracy: 86.24%  (top-3: 94.56%, top-5: 96.56%)
-  Metrics saved to ./results\tl_convnext__flip-crop__adamw__cosine__20ep.json
-
-  Run 14/36
-
-========================================================================
-  RUN: tl_convnext__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 3.6458  val_loss: 3.2633  val_acc: 43.52%  lr: 5.50e-04  time: 38.4s *
-  Epoch 2/20 — train_loss: 2.1940  val_loss: 1.4754  val_acc: 73.97%  lr: 1.00e-03  time: 38.2s *
-  Epoch 3/20 — train_loss: 1.1418  val_loss: 0.9470  val_acc: 78.91%  lr: 9.92e-04  time: 38.8s *
-  Epoch 4/20 — train_loss: 0.7845  val_loss: 0.8053  val_acc: 80.77%  lr: 9.70e-04  time: 37.3s *
-  Epoch 5/20 — train_loss: 0.6158  val_loss: 0.7279  val_acc: 81.71%  lr: 9.33e-04  time: 37.1s *
-  Epoch 6/20 — train_loss: 0.5271  val_loss: 0.6847  val_acc: 83.18%  lr: 8.83e-04  time: 37.7s *
-  Epoch 7/20 — train_loss: 0.4540  val_loss: 0.6647  val_acc: 83.44%  lr: 8.21e-04  time: 38.1s *
-  Epoch 8/20 — train_loss: 0.4042  val_loss: 0.6394  val_acc: 83.58%  lr: 7.50e-04  time: 37.4s *
-  Epoch 9/20 — train_loss: 0.3575  val_loss: 0.6264  val_acc: 83.58%  lr: 6.71e-04  time: 37.9s *
-  Epoch 10/20 — train_loss: 0.3311  val_loss: 0.6210  val_acc: 83.71%  lr: 5.87e-04  time: 37.9s *
-  Epoch 11/20 — train_loss: 0.2981  val_loss: 0.6057  val_acc: 84.65%  lr: 5.00e-04  time: 37.2s *
-  Epoch 12/20 — train_loss: 0.2809  val_loss: 0.6044  val_acc: 84.38%  lr: 4.13e-04  time: 37.6s *
-  Epoch 13/20 — train_loss: 0.2600  val_loss: 0.6007  val_acc: 83.85%  lr: 3.29e-04  time: 37.8s *
-  Epoch 14/20 — train_loss: 0.2469  val_loss: 0.5970  val_acc: 83.98%  lr: 2.50e-04  time: 36.9s *
-  Epoch 15/20 — train_loss: 0.2433  val_loss: 0.5950  val_acc: 83.98%  lr: 1.79e-04  time: 38.2s *
-  Epoch 16/20 — train_loss: 0.2328  val_loss: 0.5912  val_acc: 83.85%  lr: 1.17e-04  time: 37.4s *
-  Epoch 17/20 — train_loss: 0.2360  val_loss: 0.5907  val_acc: 83.85%  lr: 6.70e-05  time: 38.1s *
-  Epoch 18/20 — train_loss: 0.2216  val_loss: 0.5902  val_acc: 83.85%  lr: 3.02e-05  time: 37.2s *
-  Epoch 19/20 — train_loss: 0.2262  val_loss: 0.5899  val_acc: 83.85%  lr: 7.60e-06  time: 37.2s *
-  Epoch 20/20 — train_loss: 0.2169  val_loss: 0.5898  val_acc: 83.85%  lr: 0.00e+00  time: 37.2s *
-  Test accuracy: 85.84%  (top-3: 94.48%, top-5: 96.88%)
-  Metrics saved to ./results\tl_convnext__flip-crop__adamw__warmup-cosine__20ep.json
-
-  Run 15/36
-
-========================================================================
-  RUN: tl_convnext__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 2.1079  val_loss: 1.1738  val_acc: 74.50%  lr: 9.94e-04  time: 41.2s *
-  Epoch 2/20 — train_loss: 0.9917  val_loss: 0.8702  val_acc: 78.64%  lr: 9.76e-04  time: 42.7s *
-  Epoch 3/20 — train_loss: 0.7412  val_loss: 0.7701  val_acc: 80.37%  lr: 9.46e-04  time: 42.4s *
-  Epoch 4/20 — train_loss: 0.6147  val_loss: 0.7127  val_acc: 81.98%  lr: 9.05e-04  time: 44.1s *
-  Epoch 5/20 — train_loss: 0.5356  val_loss: 0.6756  val_acc: 82.91%  lr: 8.54e-04  time: 42.4s *
-  Epoch 6/20 — train_loss: 0.4752  val_loss: 0.6580  val_acc: 83.04%  lr: 7.94e-04  time: 43.0s *
-  Epoch 7/20 — train_loss: 0.4200  val_loss: 0.6408  val_acc: 82.91%  lr: 7.27e-04  time: 42.4s *
-  Epoch 8/20 — train_loss: 0.3872  val_loss: 0.6284  val_acc: 83.71%  lr: 6.55e-04  time: 42.5s *
-  Epoch 9/20 — train_loss: 0.3534  val_loss: 0.6225  val_acc: 83.58%  lr: 5.78e-04  time: 43.2s *
-  Epoch 10/20 — train_loss: 0.3285  val_loss: 0.6161  val_acc: 83.58%  lr: 5.00e-04  time: 43.6s *
-  Epoch 11/20 — train_loss: 0.3071  val_loss: 0.6082  val_acc: 83.98%  lr: 4.22e-04  time: 41.5s *
-  Epoch 12/20 — train_loss: 0.2846  val_loss: 0.6054  val_acc: 83.98%  lr: 3.45e-04  time: 41.5s *
-  Epoch 13/20 — train_loss: 0.2791  val_loss: 0.6010  val_acc: 84.11%  lr: 2.73e-04  time: 42.1s *
-  Epoch 14/20 — train_loss: 0.2726  val_loss: 0.5986  val_acc: 84.11%  lr: 2.06e-04  time: 41.5s *
-  Epoch 15/20 — train_loss: 0.2634  val_loss: 0.5968  val_acc: 83.98%  lr: 1.46e-04  time: 41.6s *
-  Epoch 16/20 — train_loss: 0.2521  val_loss: 0.5969  val_acc: 84.25%  lr: 9.55e-05  time: 41.6s
-  Epoch 17/20 — train_loss: 0.2442  val_loss: 0.5976  val_acc: 84.11%  lr: 5.45e-05  time: 41.6s
-  Epoch 18/20 — train_loss: 0.2462  val_loss: 0.5971  val_acc: 84.11%  lr: 2.45e-05  time: 41.5s
-  Epoch 19/20 — train_loss: 0.2408  val_loss: 0.5966  val_acc: 84.11%  lr: 6.16e-06  time: 42.1s *
-  Epoch 20/20 — train_loss: 0.2447  val_loss: 0.5966  val_acc: 84.11%  lr: 0.00e+00  time: 62.2s *
-  Test accuracy: 85.36%  (top-3: 94.88%, top-5: 96.88%)
-  Metrics saved to ./results\tl_convnext__randaug__adamw__cosine__20ep.json
-
-  Run 16/36
-
-========================================================================
-  RUN: tl_convnext__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 3.6224  val_loss: 3.3106  val_acc: 37.12%  lr: 5.50e-04  time: 45.5s *
-  Epoch 2/20 — train_loss: 2.2489  val_loss: 1.5264  val_acc: 70.63%  lr: 1.00e-03  time: 41.8s *
-  Epoch 3/20 — train_loss: 1.1955  val_loss: 0.9892  val_acc: 77.30%  lr: 9.92e-04  time: 41.6s *
-  Epoch 4/20 — train_loss: 0.8349  val_loss: 0.8310  val_acc: 79.71%  lr: 9.70e-04  time: 41.7s *
-  Epoch 5/20 — train_loss: 0.6818  val_loss: 0.7595  val_acc: 81.71%  lr: 9.33e-04  time: 42.6s *
-  Epoch 6/20 — train_loss: 0.5867  val_loss: 0.7190  val_acc: 82.24%  lr: 8.83e-04  time: 42.7s *
-  Epoch 7/20 — train_loss: 0.5069  val_loss: 0.6865  val_acc: 81.84%  lr: 8.21e-04  time: 42.7s *
-  Epoch 8/20 — train_loss: 0.4562  val_loss: 0.6677  val_acc: 83.44%  lr: 7.50e-04  time: 42.8s *
-  Epoch 9/20 — train_loss: 0.4096  val_loss: 0.6531  val_acc: 83.85%  lr: 6.71e-04  time: 42.4s *
-  Epoch 10/20 — train_loss: 0.3774  val_loss: 0.6410  val_acc: 83.58%  lr: 5.87e-04  time: 43.2s *
-  Epoch 11/20 — train_loss: 0.3596  val_loss: 0.6297  val_acc: 83.58%  lr: 5.00e-04  time: 42.8s *
-  Epoch 12/20 — train_loss: 0.3256  val_loss: 0.6264  val_acc: 83.71%  lr: 4.13e-04  time: 43.0s *
-  Epoch 13/20 — train_loss: 0.3151  val_loss: 0.6214  val_acc: 83.85%  lr: 3.29e-04  time: 41.9s *
-  Epoch 14/20 — train_loss: 0.2939  val_loss: 0.6213  val_acc: 83.58%  lr: 2.50e-04  time: 41.5s *
-  Epoch 15/20 — train_loss: 0.2895  val_loss: 0.6187  val_acc: 83.85%  lr: 1.79e-04  time: 41.7s *
-  Epoch 16/20 — train_loss: 0.2783  val_loss: 0.6180  val_acc: 83.85%  lr: 1.17e-04  time: 41.4s *
-  Epoch 17/20 — train_loss: 0.2729  val_loss: 0.6160  val_acc: 83.85%  lr: 6.70e-05  time: 41.5s *
-  Epoch 18/20 — train_loss: 0.2696  val_loss: 0.6164  val_acc: 83.85%  lr: 3.02e-05  time: 42.4s
-  Epoch 19/20 — train_loss: 0.2725  val_loss: 0.6157  val_acc: 83.85%  lr: 7.60e-06  time: 42.4s *
-  Epoch 20/20 — train_loss: 0.2710  val_loss: 0.6157  val_acc: 83.85%  lr: 0.00e+00  time: 41.9s *
-  Test accuracy: 85.92%  (top-3: 94.72%, top-5: 96.88%)
-  Metrics saved to ./results\tl_convnext__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 17/36
-
-========================================================================
-  RUN: tl_convnext__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 2.3945  val_loss: 1.2079  val_acc: 75.17%  lr: 9.94e-04  time: 37.9s *
-  Epoch 2/20 — train_loss: 1.3729  val_loss: 0.9128  val_acc: 78.24%  lr: 9.76e-04  time: 37.4s *
-  Epoch 3/20 — train_loss: 1.2631  val_loss: 0.8011  val_acc: 79.97%  lr: 9.46e-04  time: 37.4s *
-  Epoch 4/20 — train_loss: 1.1442  val_loss: 0.7504  val_acc: 81.71%  lr: 9.05e-04  time: 37.3s *
-  Epoch 5/20 — train_loss: 0.9773  val_loss: 0.7125  val_acc: 81.98%  lr: 8.54e-04  time: 37.8s *
-  Epoch 6/20 — train_loss: 0.9280  val_loss: 0.6920  val_acc: 82.38%  lr: 7.94e-04  time: 37.5s *
-  Epoch 7/20 — train_loss: 0.8841  val_loss: 0.6701  val_acc: 83.04%  lr: 7.27e-04  time: 38.0s *
-  Epoch 8/20 — train_loss: 0.9059  val_loss: 0.6571  val_acc: 83.58%  lr: 6.55e-04  time: 36.9s *
-  Epoch 9/20 — train_loss: 0.8910  val_loss: 0.6504  val_acc: 82.64%  lr: 5.78e-04  time: 37.1s *
-  Epoch 10/20 — train_loss: 0.8635  val_loss: 0.6419  val_acc: 83.98%  lr: 5.00e-04  time: 37.5s *
-  Epoch 11/20 — train_loss: 0.8754  val_loss: 0.6411  val_acc: 82.51%  lr: 4.22e-04  time: 37.8s *
-  Epoch 12/20 — train_loss: 0.8680  val_loss: 0.6351  val_acc: 83.58%  lr: 3.45e-04  time: 37.1s *
-  Epoch 13/20 — train_loss: 0.7641  val_loss: 0.6322  val_acc: 83.71%  lr: 2.73e-04  time: 37.5s *
-  Epoch 14/20 — train_loss: 0.7947  val_loss: 0.6262  val_acc: 84.11%  lr: 2.06e-04  time: 37.9s *
-  Epoch 15/20 — train_loss: 0.7572  val_loss: 0.6229  val_acc: 84.51%  lr: 1.46e-04  time: 37.5s *
-  Epoch 16/20 — train_loss: 0.7771  val_loss: 0.6233  val_acc: 84.51%  lr: 9.55e-05  time: 38.2s
-  Epoch 17/20 — train_loss: 0.8263  val_loss: 0.6234  val_acc: 84.38%  lr: 5.45e-05  time: 37.6s
-  Epoch 18/20 — train_loss: 0.8312  val_loss: 0.6232  val_acc: 84.38%  lr: 2.45e-05  time: 37.0s
-  Epoch 19/20 — train_loss: 0.8393  val_loss: 0.6230  val_acc: 84.25%  lr: 6.16e-06  time: 37.1s
-  Epoch 20/20 — train_loss: 0.6847  val_loss: 0.6228  val_acc: 84.38%  lr: 0.00e+00  time: 37.2s *
-  Test accuracy: 86.72%  (top-3: 94.48%, top-5: 96.16%)
-  Metrics saved to ./results\tl_convnext__mixup__adamw__cosine__20ep.json
-
-  Run 18/36
-
-========================================================================
-  RUN: tl_convnext__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 27,858,578 total
-  Epoch 1/20 — train_loss: 3.6873  val_loss: 3.3047  val_acc: 39.52%  lr: 5.50e-04  time: 37.2s *
-  Epoch 2/20 — train_loss: 2.5068  val_loss: 1.5538  val_acc: 70.89%  lr: 1.00e-03  time: 40.1s *
-  Epoch 3/20 — train_loss: 1.5562  val_loss: 1.0021  val_acc: 77.30%  lr: 9.92e-04  time: 38.9s *
-  Epoch 4/20 — train_loss: 1.2964  val_loss: 0.8422  val_acc: 80.11%  lr: 9.70e-04  time: 37.4s *
-  Epoch 5/20 — train_loss: 1.1000  val_loss: 0.7730  val_acc: 81.31%  lr: 9.33e-04  time: 38.2s *
-  Epoch 6/20 — train_loss: 1.0032  val_loss: 0.7220  val_acc: 82.24%  lr: 8.83e-04  time: 38.5s *
-  Epoch 7/20 — train_loss: 1.0124  val_loss: 0.7068  val_acc: 81.98%  lr: 8.21e-04  time: 37.5s *
-  Epoch 8/20 — train_loss: 0.9197  val_loss: 0.6774  val_acc: 82.78%  lr: 7.50e-04  time: 37.7s *
-  Epoch 9/20 — train_loss: 0.8747  val_loss: 0.6560  val_acc: 83.44%  lr: 6.71e-04  time: 37.5s *
-  Epoch 10/20 — train_loss: 0.8784  val_loss: 0.6482  val_acc: 83.58%  lr: 5.87e-04  time: 37.8s *
-  Epoch 11/20 — train_loss: 0.8778  val_loss: 0.6439  val_acc: 84.11%  lr: 5.00e-04  time: 38.5s *
-  Epoch 12/20 — train_loss: 0.8281  val_loss: 0.6390  val_acc: 83.58%  lr: 4.13e-04  time: 37.5s *
-  Epoch 13/20 — train_loss: 0.8820  val_loss: 0.6398  val_acc: 83.04%  lr: 3.29e-04  time: 38.8s
-  Epoch 14/20 — train_loss: 0.9386  val_loss: 0.6355  val_acc: 83.44%  lr: 2.50e-04  time: 38.1s *
-  Epoch 15/20 — train_loss: 0.7378  val_loss: 0.6317  val_acc: 83.58%  lr: 1.79e-04  time: 37.8s *
-  Epoch 16/20 — train_loss: 0.8182  val_loss: 0.6297  val_acc: 83.18%  lr: 1.17e-04  time: 37.9s *
-  Epoch 17/20 — train_loss: 0.8860  val_loss: 0.6288  val_acc: 83.31%  lr: 6.70e-05  time: 37.2s *
-  Epoch 18/20 — train_loss: 0.7592  val_loss: 0.6278  val_acc: 83.44%  lr: 3.02e-05  time: 38.6s *
-  Epoch 19/20 — train_loss: 0.8056  val_loss: 0.6276  val_acc: 83.44%  lr: 7.60e-06  time: 37.8s *
-  Epoch 20/20 — train_loss: 0.8587  val_loss: 0.6276  val_acc: 83.31%  lr: 0.00e+00  time: 37.7s *
-  Test accuracy: 85.68%  (top-3: 94.64%, top-5: 96.08%)
-  Metrics saved to ./results\tl_convnext__mixup__adamw__warmup-cosine__20ep.json
-
-  Run 19/36
-
-========================================================================
-  RUN: tl_efficientnet__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-Downloading: "https://download.pytorch.org/models/efficientnet_b0_rwightman-7f5810bc.pth" to C:\Users\joran/.cache\torch\hub\checkpoints\efficientnet_b0_rwightman-7f5810bc.pth
-  0%|          | 0.00/20.5M [00:00<?, ?B/s]  5%|4         | 1.00M/20.5M [00:00<00:01, 10.3MB/s] 10%|9         | 2.00M/20.5M [00:00<00:01, 10.1MB/s] 17%|#6        | 3.38M/20.5M [00:00<00:01, 10.9MB/s] 23%|##3       | 4.75M/20.5M [00:00<00:01, 12.0MB/s] 29%|##9       | 6.00M/20.5M [00:00<00:01, 11.9MB/s] 35%|###5      | 7.25M/20.5M [00:00<00:01, 11.9MB/s] 42%|####1     | 8.50M/20.5M [00:00<00:01, 11.7MB/s] 48%|####7     | 9.75M/20.5M [00:00<00:00, 11.3MB/s] 54%|#####4    | 11.1M/20.5M [00:01<00:00, 12.0MB/s] 61%|######    | 12.4M/20.5M [00:01<00:00, 11.9MB/s] 67%|######6   | 13.6M/20.5M [00:01<00:00, 11.9MB/s] 73%|#######2  | 14.9M/20.5M [00:01<00:00, 11.6MB/s] 79%|#######8  | 16.1M/20.5M [00:01<00:00, 11.9MB/s] 85%|########4 | 17.4M/20.5M [00:01<00:00, 11.9MB/s] 91%|#########1| 18.6M/20.5M [00:01<00:00, 11.9MB/s] 97%|#########7| 19.9M/20.5M [00:01<00:00, 11.7MB/s]100%|##########| 20.5M/20.5M [00:01<00:00, 11.4MB/s]
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 2.7642  val_loss: 1.8973  val_acc: 62.48%  lr: 9.94e-04  time: 37.8s *
-  Epoch 2/20 — train_loss: 1.6398  val_loss: 1.4469  val_acc: 67.16%  lr: 9.76e-04  time: 38.3s *
-  Epoch 3/20 — train_loss: 1.3144  val_loss: 1.2847  val_acc: 69.69%  lr: 9.46e-04  time: 36.8s *
-  Epoch 4/20 — train_loss: 1.1326  val_loss: 1.2152  val_acc: 70.23%  lr: 9.05e-04  time: 37.7s *
-  Epoch 5/20 — train_loss: 1.0188  val_loss: 1.1566  val_acc: 70.36%  lr: 8.54e-04  time: 38.3s *
-  Epoch 6/20 — train_loss: 0.9432  val_loss: 1.1123  val_acc: 71.43%  lr: 7.94e-04  time: 38.0s *
-  Epoch 7/20 — train_loss: 0.8769  val_loss: 1.0673  val_acc: 72.63%  lr: 7.27e-04  time: 38.2s *
-  Epoch 8/20 — train_loss: 0.8270  val_loss: 1.0503  val_acc: 72.10%  lr: 6.55e-04  time: 37.8s *
-  Epoch 9/20 — train_loss: 0.7950  val_loss: 1.0513  val_acc: 71.83%  lr: 5.78e-04  time: 38.5s
-  Epoch 10/20 — train_loss: 0.7462  val_loss: 1.0275  val_acc: 73.03%  lr: 5.00e-04  time: 38.2s *
-  Epoch 11/20 — train_loss: 0.7341  val_loss: 1.0177  val_acc: 72.90%  lr: 4.22e-04  time: 37.1s *
-  Epoch 12/20 — train_loss: 0.7159  val_loss: 0.9936  val_acc: 73.03%  lr: 3.45e-04  time: 38.5s *
-  Epoch 13/20 — train_loss: 0.6807  val_loss: 0.9949  val_acc: 73.43%  lr: 2.73e-04  time: 37.7s
-  Epoch 14/20 — train_loss: 0.6784  val_loss: 0.9874  val_acc: 73.70%  lr: 2.06e-04  time: 39.0s *
-  Epoch 15/20 — train_loss: 0.6578  val_loss: 1.0112  val_acc: 73.30%  lr: 1.46e-04  time: 37.9s
-  Epoch 16/20 — train_loss: 0.6591  val_loss: 0.9980  val_acc: 73.43%  lr: 9.55e-05  time: 37.7s
-  Epoch 17/20 — train_loss: 0.6224  val_loss: 0.9949  val_acc: 73.56%  lr: 5.45e-05  time: 38.5s
-  Epoch 18/20 — train_loss: 0.6393  val_loss: 0.9745  val_acc: 74.10%  lr: 2.45e-05  time: 38.1s *
-  Epoch 19/20 — train_loss: 0.6429  val_loss: 0.9595  val_acc: 74.77%  lr: 6.16e-06  time: 37.6s *
-  Epoch 20/20 — train_loss: 0.6344  val_loss: 0.9889  val_acc: 73.43%  lr: 0.00e+00  time: 38.0s
-  Test accuracy: 77.60%  (top-3: 89.44%, top-5: 92.24%)
-  Metrics saved to ./results\tl_efficientnet__flip-crop__adamw__cosine__20ep.json
-
-  Run 20/36
-
-========================================================================
-  RUN: tl_efficientnet__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 3.7719  val_loss: 3.5901  val_acc: 26.17%  lr: 5.50e-04  time: 38.3s *
-  Epoch 2/20 — train_loss: 2.9305  val_loss: 2.3408  val_acc: 61.95%  lr: 1.00e-03  time: 38.0s *
-  Epoch 3/20 — train_loss: 1.9012  val_loss: 1.5634  val_acc: 68.62%  lr: 9.92e-04  time: 38.9s *
-  Epoch 4/20 — train_loss: 1.4023  val_loss: 1.3522  val_acc: 69.16%  lr: 9.70e-04  time: 37.9s *
-  Epoch 5/20 — train_loss: 1.2021  val_loss: 1.2513  val_acc: 69.69%  lr: 9.33e-04  time: 38.1s *
-  Epoch 6/20 — train_loss: 1.0905  val_loss: 1.1729  val_acc: 70.63%  lr: 8.83e-04  time: 37.4s *
-  Epoch 7/20 — train_loss: 0.9744  val_loss: 1.1261  val_acc: 71.16%  lr: 8.21e-04  time: 37.8s *
-  Epoch 8/20 — train_loss: 0.9104  val_loss: 1.0829  val_acc: 72.23%  lr: 7.50e-04  time: 38.4s *
-  Epoch 9/20 — train_loss: 0.8611  val_loss: 1.0649  val_acc: 71.43%  lr: 6.71e-04  time: 38.0s *
-  Epoch 10/20 — train_loss: 0.8217  val_loss: 1.0592  val_acc: 71.16%  lr: 5.87e-04  time: 37.7s *
-  Epoch 11/20 — train_loss: 0.7891  val_loss: 1.0454  val_acc: 71.70%  lr: 5.00e-04  time: 37.1s *
-  Epoch 12/20 — train_loss: 0.7593  val_loss: 1.0340  val_acc: 72.36%  lr: 4.13e-04  time: 38.5s *
-  Epoch 13/20 — train_loss: 0.7229  val_loss: 1.0221  val_acc: 72.36%  lr: 3.29e-04  time: 38.6s *
-  Epoch 14/20 — train_loss: 0.7110  val_loss: 1.0297  val_acc: 71.83%  lr: 2.50e-04  time: 38.4s
-  Epoch 15/20 — train_loss: 0.6980  val_loss: 1.0096  val_acc: 72.36%  lr: 1.79e-04  time: 39.3s *
-  Epoch 16/20 — train_loss: 0.6789  val_loss: 1.0260  val_acc: 71.96%  lr: 1.17e-04  time: 38.2s
-  Epoch 17/20 — train_loss: 0.6753  val_loss: 1.0107  val_acc: 72.76%  lr: 6.70e-05  time: 37.3s
-  Epoch 18/20 — train_loss: 0.6726  val_loss: 1.0017  val_acc: 72.76%  lr: 3.02e-05  time: 37.8s *
-  Epoch 19/20 — train_loss: 0.6511  val_loss: 1.0067  val_acc: 72.63%  lr: 7.60e-06  time: 38.0s
-  Epoch 20/20 — train_loss: 0.6720  val_loss: 0.9934  val_acc: 72.36%  lr: 0.00e+00  time: 37.6s *
-  Test accuracy: 76.48%  (top-3: 88.08%, top-5: 91.84%)
-  Metrics saved to ./results\tl_efficientnet__flip-crop__adamw__warmup-cosine__20ep.json
-
-  Run 21/36
-
-========================================================================
-  RUN: tl_efficientnet__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 2.8683  val_loss: 1.9510  val_acc: 63.82%  lr: 9.94e-04  time: 42.6s *
-  Epoch 2/20 — train_loss: 1.7869  val_loss: 1.4423  val_acc: 69.29%  lr: 9.76e-04  time: 42.6s *
-  Epoch 3/20 — train_loss: 1.4436  val_loss: 1.2782  val_acc: 70.49%  lr: 9.46e-04  time: 41.2s *
-  Epoch 4/20 — train_loss: 1.2619  val_loss: 1.1991  val_acc: 70.63%  lr: 9.05e-04  time: 42.4s *
-  Epoch 5/20 — train_loss: 1.1423  val_loss: 1.1182  val_acc: 72.36%  lr: 8.54e-04  time: 42.6s *
-  Epoch 6/20 — train_loss: 1.0876  val_loss: 1.0735  val_acc: 72.23%  lr: 7.94e-04  time: 41.7s *
-  Epoch 7/20 — train_loss: 1.0136  val_loss: 1.0416  val_acc: 72.63%  lr: 7.27e-04  time: 43.0s *
-  Epoch 8/20 — train_loss: 0.9684  val_loss: 1.0290  val_acc: 73.70%  lr: 6.55e-04  time: 42.4s *
-  Epoch 9/20 — train_loss: 0.9301  val_loss: 1.0123  val_acc: 73.16%  lr: 5.78e-04  time: 42.3s *
-  Epoch 10/20 — train_loss: 0.8997  val_loss: 0.9949  val_acc: 73.16%  lr: 5.00e-04  time: 42.4s *
-  Epoch 11/20 — train_loss: 0.8907  val_loss: 0.9884  val_acc: 73.43%  lr: 4.22e-04  time: 42.8s *
-  Epoch 12/20 — train_loss: 0.8501  val_loss: 0.9814  val_acc: 73.56%  lr: 3.45e-04  time: 42.2s *
-  Epoch 13/20 — train_loss: 0.8413  val_loss: 0.9860  val_acc: 74.10%  lr: 2.73e-04  time: 42.1s
-  Epoch 14/20 — train_loss: 0.8150  val_loss: 0.9769  val_acc: 73.70%  lr: 2.06e-04  time: 42.1s *
-  Epoch 15/20 — train_loss: 0.7987  val_loss: 0.9749  val_acc: 73.97%  lr: 1.46e-04  time: 42.9s *
-  Epoch 16/20 — train_loss: 0.7742  val_loss: 0.9794  val_acc: 73.03%  lr: 9.55e-05  time: 41.9s
-  Epoch 17/20 — train_loss: 0.7913  val_loss: 0.9691  val_acc: 74.63%  lr: 5.45e-05  time: 42.2s *
-  Epoch 18/20 — train_loss: 0.7853  val_loss: 0.9727  val_acc: 73.56%  lr: 2.45e-05  time: 42.1s
-  Epoch 19/20 — train_loss: 0.7781  val_loss: 0.9678  val_acc: 73.97%  lr: 6.16e-06  time: 42.5s *
-  Epoch 20/20 — train_loss: 0.7990  val_loss: 0.9687  val_acc: 74.10%  lr: 0.00e+00  time: 42.1s
-  Test accuracy: 78.16%  (top-3: 89.68%, top-5: 92.56%)
-  Metrics saved to ./results\tl_efficientnet__randaug__adamw__cosine__20ep.json
-
-  Run 22/36
-
-========================================================================
-  RUN: tl_efficientnet__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 3.7878  val_loss: 3.6058  val_acc: 27.24%  lr: 5.50e-04  time: 42.5s *
-  Epoch 2/20 — train_loss: 3.0042  val_loss: 2.4025  val_acc: 61.15%  lr: 1.00e-03  time: 42.3s *
-  Epoch 3/20 — train_loss: 2.0270  val_loss: 1.6030  val_acc: 66.49%  lr: 9.92e-04  time: 41.8s *
-  Epoch 4/20 — train_loss: 1.5350  val_loss: 1.3511  val_acc: 68.36%  lr: 9.70e-04  time: 42.4s *
-  Epoch 5/20 — train_loss: 1.3340  val_loss: 1.2365  val_acc: 69.69%  lr: 9.33e-04  time: 42.5s *
-  Epoch 6/20 — train_loss: 1.2041  val_loss: 1.1589  val_acc: 71.43%  lr: 8.83e-04  time: 42.0s *
-  Epoch 7/20 — train_loss: 1.1214  val_loss: 1.1060  val_acc: 70.76%  lr: 8.21e-04  time: 42.5s *
-  Epoch 8/20 — train_loss: 1.0336  val_loss: 1.0799  val_acc: 72.36%  lr: 7.50e-04  time: 42.1s *
-  Epoch 9/20 — train_loss: 0.9985  val_loss: 1.0400  val_acc: 73.70%  lr: 6.71e-04  time: 42.2s *
-  Epoch 10/20 — train_loss: 0.9533  val_loss: 1.0289  val_acc: 72.63%  lr: 5.87e-04  time: 42.1s *
-  Epoch 11/20 — train_loss: 0.9255  val_loss: 1.0246  val_acc: 72.76%  lr: 5.00e-04  time: 41.8s *
-  Epoch 12/20 — train_loss: 0.8802  val_loss: 1.0073  val_acc: 73.70%  lr: 4.13e-04  time: 43.0s *
-  Epoch 13/20 — train_loss: 0.8577  val_loss: 0.9977  val_acc: 72.76%  lr: 3.29e-04  time: 42.7s *
-  Epoch 14/20 — train_loss: 0.8470  val_loss: 0.9972  val_acc: 72.76%  lr: 2.50e-04  time: 42.2s *
-  Epoch 15/20 — train_loss: 0.8334  val_loss: 0.9840  val_acc: 73.30%  lr: 1.79e-04  time: 41.9s *
-  Epoch 16/20 — train_loss: 0.8130  val_loss: 0.9798  val_acc: 73.83%  lr: 1.17e-04  time: 42.5s *
-  Epoch 17/20 — train_loss: 0.8104  val_loss: 0.9818  val_acc: 73.43%  lr: 6.70e-05  time: 42.1s
-  Epoch 18/20 — train_loss: 0.7999  val_loss: 0.9787  val_acc: 73.43%  lr: 3.02e-05  time: 42.4s *
-  Epoch 19/20 — train_loss: 0.7975  val_loss: 0.9808  val_acc: 73.56%  lr: 7.60e-06  time: 42.6s
-  Epoch 20/20 — train_loss: 0.8069  val_loss: 0.9770  val_acc: 73.83%  lr: 0.00e+00  time: 42.5s *
-  Test accuracy: 79.28%  (top-3: 89.12%, top-5: 92.72%)
-  Metrics saved to ./results\tl_efficientnet__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 23/36
-
-========================================================================
-  RUN: tl_efficientnet__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 3.0486  val_loss: 2.0869  val_acc: 60.48%  lr: 9.94e-04  time: 38.6s *
-  Epoch 2/20 — train_loss: 2.0972  val_loss: 1.6553  val_acc: 65.42%  lr: 9.76e-04  time: 37.4s *
-  Epoch 3/20 — train_loss: 1.7687  val_loss: 1.3734  val_acc: 68.89%  lr: 9.46e-04  time: 38.3s *
-  Epoch 4/20 — train_loss: 1.6882  val_loss: 1.2975  val_acc: 69.16%  lr: 9.05e-04  time: 37.5s *
-  Epoch 5/20 — train_loss: 1.6543  val_loss: 1.2523  val_acc: 70.23%  lr: 8.54e-04  time: 38.1s *
-  Epoch 6/20 — train_loss: 1.5401  val_loss: 1.2037  val_acc: 69.96%  lr: 7.94e-04  time: 38.4s *
-  Epoch 7/20 — train_loss: 1.5630  val_loss: 1.1775  val_acc: 70.63%  lr: 7.27e-04  time: 38.0s *
-  Epoch 8/20 — train_loss: 1.4732  val_loss: 1.1584  val_acc: 71.03%  lr: 6.55e-04  time: 37.8s *
-  Epoch 9/20 — train_loss: 1.5767  val_loss: 1.1464  val_acc: 72.10%  lr: 5.78e-04  time: 37.8s *
-  Epoch 10/20 — train_loss: 1.3939  val_loss: 1.1230  val_acc: 72.23%  lr: 5.00e-04  time: 37.8s *
-  Epoch 11/20 — train_loss: 1.2949  val_loss: 1.1215  val_acc: 71.83%  lr: 4.22e-04  time: 38.0s *
-  Epoch 12/20 — train_loss: 1.3442  val_loss: 1.0914  val_acc: 72.50%  lr: 3.45e-04  time: 37.8s *
-  Epoch 13/20 — train_loss: 1.4004  val_loss: 1.1122  val_acc: 72.50%  lr: 2.73e-04  time: 38.4s
-  Epoch 14/20 — train_loss: 1.3497  val_loss: 1.0932  val_acc: 72.10%  lr: 2.06e-04  time: 38.2s
-  Epoch 15/20 — train_loss: 1.4391  val_loss: 1.0922  val_acc: 72.76%  lr: 1.46e-04  time: 37.6s
-  Epoch 16/20 — train_loss: 1.3744  val_loss: 1.0629  val_acc: 72.63%  lr: 9.55e-05  time: 38.3s *
-  Epoch 17/20 — train_loss: 1.4219  val_loss: 1.1145  val_acc: 72.50%  lr: 5.45e-05  time: 38.3s
-  Epoch 18/20 — train_loss: 1.3313  val_loss: 1.0928  val_acc: 72.63%  lr: 2.45e-05  time: 38.2s
-  Epoch 19/20 — train_loss: 1.3862  val_loss: 1.0840  val_acc: 73.16%  lr: 6.16e-06  time: 38.4s
-  Epoch 20/20 — train_loss: 1.3137  val_loss: 1.0693  val_acc: 73.16%  lr: 0.00e+00  time: 38.0s
-  Test accuracy: 76.56%  (top-3: 88.72%, top-5: 91.76%)
-  Metrics saved to ./results\tl_efficientnet__mixup__adamw__cosine__20ep.json
-
-  Run 24/36
-
-========================================================================
-  RUN: tl_efficientnet__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 4,071,598 total
-  Epoch 1/20 — train_loss: 3.8168  val_loss: 3.6428  val_acc: 22.56%  lr: 5.50e-04  time: 37.3s *
-  Epoch 2/20 — train_loss: 3.1302  val_loss: 2.4660  val_acc: 58.21%  lr: 1.00e-03  time: 37.8s *
-  Epoch 3/20 — train_loss: 2.2737  val_loss: 1.6830  val_acc: 65.15%  lr: 9.92e-04  time: 37.2s *
-  Epoch 4/20 — train_loss: 1.9518  val_loss: 1.4742  val_acc: 66.49%  lr: 9.70e-04  time: 38.9s *
-  Epoch 5/20 — train_loss: 1.7674  val_loss: 1.3959  val_acc: 67.29%  lr: 9.33e-04  time: 37.9s *
-  Epoch 6/20 — train_loss: 1.7327  val_loss: 1.2953  val_acc: 69.16%  lr: 8.83e-04  time: 37.7s *
-  Epoch 7/20 — train_loss: 1.5526  val_loss: 1.2322  val_acc: 69.69%  lr: 8.21e-04  time: 38.3s *
-  Epoch 8/20 — train_loss: 1.5517  val_loss: 1.2368  val_acc: 70.23%  lr: 7.50e-04  time: 37.4s
-  Epoch 9/20 — train_loss: 1.4555  val_loss: 1.1524  val_acc: 70.76%  lr: 6.71e-04  time: 37.8s *
-  Epoch 10/20 — train_loss: 1.5028  val_loss: 1.1846  val_acc: 71.16%  lr: 5.87e-04  time: 38.0s
-  Epoch 11/20 — train_loss: 1.4232  val_loss: 1.1492  val_acc: 71.70%  lr: 5.00e-04  time: 37.8s *
-  Epoch 12/20 — train_loss: 1.3335  val_loss: 1.1351  val_acc: 71.16%  lr: 4.13e-04  time: 38.3s *
-  Epoch 13/20 — train_loss: 1.2706  val_loss: 1.1140  val_acc: 71.16%  lr: 3.29e-04  time: 38.0s *
-  Epoch 14/20 — train_loss: 1.3548  val_loss: 1.1040  val_acc: 71.56%  lr: 2.50e-04  time: 37.9s *
-  Epoch 15/20 — train_loss: 1.3470  val_loss: 1.1092  val_acc: 72.36%  lr: 1.79e-04  time: 37.7s
-  Epoch 16/20 — train_loss: 1.3596  val_loss: 1.0986  val_acc: 72.23%  lr: 1.17e-04  time: 38.9s *
-  Epoch 17/20 — train_loss: 1.3808  val_loss: 1.0792  val_acc: 71.56%  lr: 6.70e-05  time: 38.1s *
-  Epoch 18/20 — train_loss: 1.2875  val_loss: 1.1081  val_acc: 72.50%  lr: 3.02e-05  time: 38.3s
-  Epoch 19/20 — train_loss: 1.2768  val_loss: 1.0952  val_acc: 72.23%  lr: 7.60e-06  time: 38.3s
-  Epoch 20/20 — train_loss: 1.4372  val_loss: 1.1401  val_acc: 71.16%  lr: 0.00e+00  time: 38.5s
-  Test accuracy: 76.48%  (top-3: 87.84%, top-5: 91.84%)
-  Metrics saved to ./results\tl_efficientnet__mixup__adamw__warmup-cosine__20ep.json
-
-  Run 25/36
-
-========================================================================
-  RUN: tl_vit__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-Downloading: "https://download.pytorch.org/models/vit_b_16-c867db91.pth" to C:\Users\joran/.cache\torch\hub\checkpoints\vit_b_16-c867db91.pth
-  0%|          | 0.00/330M [00:00<?, ?B/s]  0%|          | 1.12M/330M [00:00<00:31, 11.0MB/s]  1%|          | 2.25M/330M [00:00<00:31, 10.8MB/s]  1%|1         | 3.50M/330M [00:00<00:29, 11.8MB/s]  1%|1         | 4.75M/330M [00:00<00:28, 11.8MB/s]  2%|1         | 6.00M/330M [00:00<00:30, 11.3MB/s]  2%|2         | 7.38M/330M [00:00<00:29, 11.6MB/s]  3%|2         | 8.62M/330M [00:00<00:28, 12.0MB/s]  3%|2         | 9.88M/330M [00:00<00:28, 11.7MB/s]  3%|3         | 11.1M/330M [00:00<00:28, 11.9MB/s]  4%|3         | 12.4M/330M [00:01<00:28, 11.9MB/s]  4%|4         | 13.6M/330M [00:01<00:28, 11.6MB/s]  5%|4         | 14.9M/330M [00:01<00:27, 11.9MB/s]  5%|4         | 16.1M/330M [00:01<00:33, 9.90MB/s]  5%|5         | 17.1M/330M [00:01<00:33, 9.68MB/s]  5%|5         | 18.1M/330M [00:01<00:35, 9.16MB/s]  6%|5         | 19.1M/330M [00:01<00:35, 9.18MB/s]  6%|6         | 20.1M/330M [00:01<00:35, 9.18MB/s]  6%|6         | 21.2M/330M [00:02<00:33, 9.58MB/s]  7%|6         | 22.2M/330M [00:02<00:34, 9.44MB/s]  7%|7         | 23.2M/330M [00:02<00:33, 9.52MB/s]  7%|7         | 24.2M/330M [00:02<00:35, 8.98MB/s]  8%|7         | 25.2M/330M [00:02<00:34, 9.24MB/s]  8%|7         | 26.2M/330M [00:02<00:36, 8.63MB/s]  8%|8         | 27.4M/330M [00:02<00:34, 9.27MB/s]  9%|8         | 28.4M/330M [00:02<00:34, 9.29MB/s]  9%|8         | 29.4M/330M [00:03<00:34, 9.21MB/s]  9%|9         | 30.4M/330M [00:03<00:36, 8.66MB/s]  9%|9         | 31.2M/330M [00:03<00:39, 7.97MB/s] 10%|9         | 32.1M/330M [00:03<00:38, 8.11MB/s] 10%|9         | 33.0M/330M [00:03<00:37, 8.37MB/s] 10%|#         | 33.9M/330M [00:03<00:38, 8.18MB/s] 11%|#         | 35.0M/330M [00:03<00:34, 9.07MB/s] 11%|#         | 36.1M/330M [00:03<00:31, 9.82MB/s] 11%|#1        | 37.4M/330M [00:03<00:29, 10.4MB/s] 12%|#1        | 38.5M/330M [00:04<00:28, 10.7MB/s] 12%|#2        | 39.8M/330M [00:04<00:28, 10.8MB/s] 12%|#2        | 41.0M/330M [00:04<00:27, 11.1MB/s] 13%|#2        | 42.4M/330M [00:04<00:25, 11.7MB/s] 13%|#3        | 43.5M/330M [00:04<00:25, 11.7MB/s] 14%|#3        | 44.8M/330M [00:04<00:26, 11.4MB/s] 14%|#3        | 46.0M/330M [00:04<00:25, 11.9MB/s] 14%|#4        | 47.2M/330M [00:04<00:25, 11.8MB/s] 15%|#4        | 48.5M/330M [00:04<00:24, 11.8MB/s] 15%|#5        | 49.8M/330M [00:05<00:25, 11.6MB/s] 15%|#5        | 51.0M/330M [00:05<00:25, 11.6MB/s] 16%|#5        | 52.2M/330M [00:05<00:24, 11.9MB/s] 16%|#6        | 53.5M/330M [00:05<00:24, 11.9MB/s] 17%|#6        | 54.8M/330M [00:05<00:24, 11.6MB/s] 17%|#6        | 56.0M/330M [00:05<00:24, 11.9MB/s] 17%|#7        | 57.2M/330M [00:05<00:24, 11.8MB/s] 18%|#7        | 58.5M/330M [00:05<00:24, 11.8MB/s] 18%|#8        | 59.8M/330M [00:05<00:24, 11.6MB/s] 18%|#8        | 61.0M/330M [00:06<00:23, 11.8MB/s] 19%|#8        | 62.2M/330M [00:06<00:24, 11.5MB/s] 19%|#9        | 63.6M/330M [00:06<00:24, 11.6MB/s] 20%|#9        | 64.9M/330M [00:06<00:23, 12.0MB/s] 20%|##        | 66.1M/330M [00:06<00:23, 11.8MB/s] 20%|##        | 67.4M/330M [00:06<00:23, 11.6MB/s] 21%|##        | 68.6M/330M [00:06<00:22, 12.0MB/s] 21%|##1       | 69.9M/330M [00:06<00:22, 11.9MB/s] 22%|##1       | 71.1M/330M [00:06<00:22, 11.8MB/s] 22%|##1       | 72.4M/330M [00:07<00:23, 11.5MB/s] 22%|##2       | 73.6M/330M [00:07<00:22, 11.9MB/s] 23%|##2       | 74.9M/330M [00:07<00:22, 11.9MB/s] 23%|##3       | 76.1M/330M [00:07<00:22, 11.8MB/s] 23%|##3       | 77.4M/330M [00:07<00:22, 11.6MB/s] 24%|##3       | 78.6M/330M [00:07<00:22, 11.9MB/s] 24%|##4       | 79.9M/330M [00:07<00:22, 11.9MB/s] 25%|##4       | 81.1M/330M [00:07<00:22, 11.8MB/s] 25%|##4       | 82.4M/330M [00:07<00:22, 11.6MB/s] 25%|##5       | 83.6M/330M [00:08<00:22, 11.5MB/s] 26%|##5       | 85.0M/330M [00:08<00:22, 11.6MB/s] 26%|##6       | 86.4M/330M [00:08<00:21, 11.7MB/s] 27%|##6       | 87.8M/330M [00:08<00:21, 11.8MB/s] 27%|##6       | 89.0M/330M [00:08<00:20, 12.1MB/s] 27%|##7       | 90.2M/330M [00:08<00:21, 12.0MB/s] 28%|##7       | 91.5M/330M [00:08<00:21, 11.9MB/s] 28%|##8       | 92.8M/330M [00:08<00:21, 11.5MB/s] 28%|##8       | 94.1M/330M [00:09<00:21, 11.7MB/s] 29%|##8       | 95.4M/330M [00:09<00:20, 12.0MB/s] 29%|##9       | 96.6M/330M [00:09<00:20, 12.0MB/s] 30%|##9       | 97.9M/330M [00:09<00:20, 11.9MB/s] 30%|###       | 99.1M/330M [00:09<00:20, 11.6MB/s] 30%|###       | 100M/330M [00:09<00:20, 11.9MB/s]  31%|###       | 102M/330M [00:09<00:20, 11.9MB/s] 31%|###1      | 103M/330M [00:09<00:20, 11.9MB/s] 32%|###1      | 104M/330M [00:09<00:20, 11.8MB/s] 32%|###1      | 105M/330M [00:10<00:20, 11.5MB/s] 32%|###2      | 107M/330M [00:10<00:20, 11.5MB/s] 33%|###2      | 108M/330M [00:10<00:19, 11.7MB/s] 33%|###3      | 110M/330M [00:10<00:19, 11.8MB/s] 34%|###3      | 111M/330M [00:10<00:19, 12.1MB/s] 34%|###3      | 112M/330M [00:10<00:19, 12.0MB/s] 34%|###4      | 113M/330M [00:10<00:19, 11.9MB/s] 35%|###4      | 114M/330M [00:10<00:19, 11.6MB/s] 35%|###5      | 116M/330M [00:10<00:19, 11.6MB/s] 35%|###5      | 117M/330M [00:11<00:19, 11.6MB/s] 36%|###5      | 118M/330M [00:11<00:18, 12.1MB/s] 36%|###6      | 120M/330M [00:11<00:18, 12.0MB/s] 37%|###6      | 121M/330M [00:11<00:18, 11.8MB/s] 37%|###6      | 122M/330M [00:11<00:18, 11.5MB/s] 37%|###7      | 123M/330M [00:11<00:18, 11.7MB/s] 38%|###7      | 125M/330M [00:11<00:17, 12.1MB/s] 38%|###8      | 126M/330M [00:11<00:17, 11.9MB/s] 38%|###8      | 127M/330M [00:11<00:18, 11.6MB/s] 39%|###8      | 128M/330M [00:12<00:18, 11.7MB/s] 39%|###9      | 130M/330M [00:12<00:17, 12.0MB/s] 40%|###9      | 131M/330M [00:12<00:17, 12.0MB/s] 40%|####      | 132M/330M [00:12<00:17, 11.9MB/s] 40%|####      | 134M/330M [00:12<00:17, 11.7MB/s] 41%|####      | 135M/330M [00:12<00:17, 12.0MB/s] 41%|####1     | 136M/330M [00:12<00:17, 11.9MB/s] 42%|####1     | 137M/330M [00:12<00:17, 11.9MB/s] 42%|####1     | 138M/330M [00:12<00:17, 11.7MB/s] 42%|####2     | 140M/330M [00:13<00:17, 11.4MB/s] 43%|####2     | 141M/330M [00:13<00:17, 11.6MB/s] 43%|####3     | 142M/330M [00:13<00:16, 12.0MB/s] 43%|####3     | 144M/330M [00:13<00:16, 12.0MB/s] 44%|####3     | 145M/330M [00:13<00:16, 11.6MB/s] 44%|####4     | 146M/330M [00:13<00:16, 12.0MB/s] 45%|####4     | 147M/330M [00:13<00:24, 7.74MB/s] 45%|####4     | 148M/330M [00:14<00:22, 8.63MB/s] 45%|####5     | 150M/330M [00:14<00:20, 9.15MB/s] 46%|####5     | 151M/330M [00:14<00:18, 10.1MB/s] 46%|####6     | 152M/330M [00:14<00:18, 10.4MB/s] 46%|####6     | 154M/330M [00:14<00:16, 10.9MB/s] 47%|####6     | 155M/330M [00:14<00:17, 10.8MB/s] 47%|####7     | 156M/330M [00:14<00:15, 11.5MB/s] 48%|####7     | 157M/330M [00:14<00:15, 11.6MB/s] 48%|####7     | 158M/330M [00:14<00:15, 11.3MB/s] 48%|####8     | 160M/330M [00:15<00:15, 11.8MB/s] 49%|####8     | 161M/330M [00:15<00:15, 11.8MB/s] 49%|####9     | 162M/330M [00:15<00:14, 11.8MB/s] 50%|####9     | 164M/330M [00:15<00:14, 11.8MB/s] 50%|####9     | 165M/330M [00:15<00:15, 11.4MB/s] 50%|#####     | 166M/330M [00:15<00:14, 11.9MB/s] 51%|#####     | 168M/330M [00:15<00:14, 11.9MB/s] 51%|#####1    | 169M/330M [00:15<00:14, 11.9MB/s] 51%|#####1    | 170M/330M [00:15<00:14, 11.8MB/s] 52%|#####1    | 171M/330M [00:16<00:14, 11.5MB/s] 52%|#####2    | 173M/330M [00:16<00:13, 11.9MB/s] 53%|#####2    | 174M/330M [00:16<00:13, 11.9MB/s] 53%|#####3    | 175M/330M [00:16<00:13, 11.9MB/s] 53%|#####3    | 176M/330M [00:16<00:13, 11.8MB/s] 54%|#####3    | 178M/330M [00:16<00:13, 11.5MB/s] 54%|#####4    | 179M/330M [00:16<00:13, 11.9MB/s] 55%|#####4    | 180M/330M [00:16<00:13, 11.7MB/s] 55%|#####4    | 181M/330M [00:16<00:13, 11.9MB/s] 55%|#####5    | 183M/330M [00:17<00:13, 11.9MB/s] 56%|#####5    | 184M/330M [00:17<00:12, 11.9MB/s] 56%|#####6    | 185M/330M [00:17<00:12, 11.9MB/s] 56%|#####6    | 186M/330M [00:17<00:13, 11.5MB/s] 57%|#####6    | 188M/330M [00:17<00:12, 11.9MB/s] 57%|#####7    | 189M/330M [00:17<00:12, 11.9MB/s] 58%|#####7    | 190M/330M [00:17<00:12, 11.9MB/s] 58%|#####7    | 192M/330M [00:17<00:12, 11.9MB/s] 58%|#####8    | 193M/330M [00:17<00:12, 11.4MB/s] 59%|#####8    | 194M/330M [00:18<00:11, 12.0MB/s] 59%|#####9    | 195M/330M [00:18<00:11, 11.9MB/s] 60%|#####9    | 197M/330M [00:18<00:11, 11.9MB/s] 60%|#####9    | 198M/330M [00:18<00:11, 11.9MB/s] 60%|######    | 199M/330M [00:18<00:12, 11.4MB/s] 61%|######    | 200M/330M [00:18<00:11, 12.0MB/s] 61%|######1   | 202M/330M [00:18<00:11, 11.9MB/s] 61%|######1   | 203M/330M [00:18<00:11, 11.5MB/s] 62%|######1   | 204M/330M [00:18<00:11, 12.0MB/s] 62%|######2   | 206M/330M [00:19<00:10, 11.9MB/s] 63%|######2   | 207M/330M [00:19<00:10, 11.9MB/s] 63%|######3   | 208M/330M [00:19<00:10, 11.9MB/s] 63%|######3   | 209M/330M [00:19<00:10, 11.9MB/s] 64%|######3   | 211M/330M [00:19<00:10, 11.8MB/s] 64%|######4   | 212M/330M [00:19<00:10, 11.5MB/s] 65%|######4   | 213M/330M [00:19<00:10, 11.9MB/s] 65%|######4   | 214M/330M [00:19<00:10, 11.9MB/s] 65%|######5   | 216M/330M [00:19<00:10, 11.9MB/s] 66%|######5   | 217M/330M [00:20<00:10, 11.8MB/s] 66%|######6   | 218M/330M [00:20<00:09, 11.9MB/s] 66%|######6   | 219M/330M [00:20<00:09, 11.9MB/s] 67%|######6   | 221M/330M [00:20<00:09, 11.8MB/s] 67%|######7   | 222M/330M [00:20<00:09, 11.8MB/s] 68%|######7   | 223M/330M [00:20<00:09, 11.4MB/s] 68%|######7   | 224M/330M [00:20<00:09, 11.5MB/s] 68%|######8   | 226M/330M [00:20<00:09, 11.8MB/s] 69%|######8   | 227M/330M [00:20<00:09, 12.0MB/s] 69%|######9   | 228M/330M [00:21<00:09, 11.9MB/s] 69%|######9   | 229M/330M [00:21<00:08, 12.0MB/s] 70%|######9   | 231M/330M [00:21<00:08, 11.9MB/s] 70%|#######   | 232M/330M [00:21<00:08, 11.9MB/s] 71%|#######   | 233M/330M [00:21<00:08, 11.8MB/s] 71%|#######   | 234M/330M [00:21<00:08, 11.5MB/s] 71%|#######1  | 236M/330M [00:21<00:08, 11.9MB/s] 72%|#######1  | 237M/330M [00:21<00:08, 11.9MB/s] 72%|#######2  | 238M/330M [00:22<00:08, 11.9MB/s] 73%|#######2  | 240M/330M [00:22<00:08, 11.9MB/s] 73%|#######2  | 241M/330M [00:22<00:08, 11.4MB/s] 73%|#######3  | 242M/330M [00:22<00:07, 12.0MB/s] 74%|#######3  | 243M/330M [00:22<00:07, 11.9MB/s] 74%|#######4  | 245M/330M [00:22<00:07, 11.9MB/s] 74%|#######4  | 246M/330M [00:22<00:07, 11.9MB/s] 75%|#######4  | 247M/330M [00:22<00:07, 11.4MB/s] 75%|#######5  | 248M/330M [00:22<00:07, 11.6MB/s] 76%|#######5  | 250M/330M [00:23<00:06, 12.1MB/s] 76%|#######6  | 251M/330M [00:23<00:07, 11.8MB/s] 76%|#######6  | 252M/330M [00:23<00:07, 11.6MB/s] 77%|#######6  | 254M/330M [00:23<00:06, 12.0MB/s] 77%|#######7  | 255M/330M [00:23<00:06, 11.6MB/s] 78%|#######7  | 256M/330M [00:23<00:06, 11.2MB/s] 78%|#######8  | 258M/330M [00:23<00:06, 12.2MB/s] 78%|#######8  | 259M/330M [00:23<00:06, 12.1MB/s] 79%|#######8  | 260M/330M [00:24<00:09, 7.96MB/s] 79%|#######9  | 261M/330M [00:24<00:08, 8.52MB/s] 80%|#######9  | 263M/330M [00:24<00:07, 9.60MB/s] 80%|#######9  | 264M/330M [00:24<00:06, 10.0MB/s] 80%|########  | 265M/330M [00:24<00:06, 10.6MB/s] 81%|########  | 266M/330M [00:24<00:06, 10.8MB/s] 81%|########  | 268M/330M [00:24<00:05, 11.2MB/s] 81%|########1 | 269M/330M [00:24<00:05, 11.2MB/s] 82%|########1 | 270M/330M [00:25<00:05, 11.5MB/s] 82%|########2 | 271M/330M [00:25<00:05, 11.3MB/s] 82%|########2 | 272M/330M [00:25<00:05, 11.8MB/s] 83%|########2 | 274M/330M [00:25<00:05, 11.8MB/s] 83%|########3 | 275M/330M [00:25<00:05, 11.4MB/s] 84%|########3 | 276M/330M [00:25<00:04, 11.9MB/s] 84%|########3 | 277M/330M [00:25<00:04, 11.8MB/s] 84%|########4 | 279M/330M [00:25<00:04, 11.5MB/s] 85%|########4 | 280M/330M [00:25<00:04, 12.0MB/s] 85%|########5 | 281M/330M [00:26<00:04, 11.9MB/s] 86%|########5 | 282M/330M [00:26<00:04, 11.6MB/s] 86%|########5 | 284M/330M [00:26<00:04, 11.9MB/s] 86%|########6 | 285M/330M [00:26<00:03, 11.9MB/s] 87%|########6 | 286M/330M [00:26<00:03, 11.8MB/s] 87%|########7 | 288M/330M [00:26<00:03, 11.8MB/s] 87%|########7 | 289M/330M [00:26<00:03, 11.7MB/s] 88%|########7 | 290M/330M [00:26<00:03, 11.9MB/s] 88%|########8 | 291M/330M [00:26<00:03, 11.8MB/s] 89%|########8 | 292M/330M [00:27<00:03, 11.9MB/s] 89%|########8 | 294M/330M [00:27<00:03, 11.8MB/s] 89%|########9 | 295M/330M [00:27<00:03, 11.6MB/s] 90%|########9 | 296M/330M [00:27<00:03, 11.9MB/s] 90%|######### | 298M/330M [00:27<00:02, 11.9MB/s] 90%|######### | 299M/330M [00:27<00:02, 11.9MB/s] 91%|######### | 300M/330M [00:27<00:02, 11.8MB/s] 91%|#########1| 301M/330M [00:27<00:02, 11.5MB/s] 92%|#########1| 302M/330M [00:27<00:02, 11.9MB/s] 92%|#########1| 304M/330M [00:28<00:02, 11.9MB/s] 92%|#########2| 305M/330M [00:28<00:02, 11.4MB/s] 93%|#########2| 306M/330M [00:28<00:02, 12.0MB/s] 93%|#########3| 308M/330M [00:28<00:01, 11.9MB/s] 94%|#########3| 309M/330M [00:28<00:01, 11.5MB/s] 94%|#########3| 310M/330M [00:28<00:01, 12.0MB/s] 94%|#########4| 312M/330M [00:28<00:01, 12.0MB/s] 95%|#########4| 313M/330M [00:28<00:01, 11.5MB/s] 95%|#########5| 314M/330M [00:28<00:01, 11.5MB/s] 95%|#########5| 315M/330M [00:29<00:01, 12.1MB/s] 96%|#########5| 317M/330M [00:29<00:01, 11.7MB/s] 96%|#########6| 318M/330M [00:29<00:01, 12.0MB/s] 97%|#########6| 319M/330M [00:29<00:00, 11.9MB/s] 97%|#########6| 320M/330M [00:29<00:00, 11.5MB/s] 97%|#########7| 322M/330M [00:29<00:00, 12.0MB/s] 98%|#########7| 323M/330M [00:29<00:00, 11.9MB/s] 98%|#########8| 324M/330M [00:29<00:00, 11.6MB/s] 99%|#########8| 326M/330M [00:29<00:00, 12.0MB/s] 99%|#########8| 327M/330M [00:30<00:00, 11.9MB/s] 99%|#########9| 328M/330M [00:30<00:00, 11.9MB/s]100%|#########9| 329M/330M [00:30<00:00, 11.8MB/s]100%|##########| 330M/330M [00:30<00:00, 11.4MB/s]
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 1.8754  val_loss: 1.1188  val_acc: 73.97%  lr: 9.94e-04  time: 50.9s *
-  Epoch 2/20 — train_loss: 0.8725  val_loss: 0.8944  val_acc: 78.24%  lr: 9.76e-04  time: 50.9s *
-  Epoch 3/20 — train_loss: 0.6489  val_loss: 0.8019  val_acc: 78.77%  lr: 9.46e-04  time: 51.0s *
-  Epoch 4/20 — train_loss: 0.5201  val_loss: 0.7705  val_acc: 80.24%  lr: 9.05e-04  time: 50.8s *
-  Epoch 5/20 — train_loss: 0.4427  val_loss: 0.7352  val_acc: 79.97%  lr: 8.54e-04  time: 50.8s *
-  Epoch 6/20 — train_loss: 0.3712  val_loss: 0.7265  val_acc: 80.64%  lr: 7.94e-04  time: 51.1s *
-  Epoch 7/20 — train_loss: 0.3308  val_loss: 0.7117  val_acc: 80.24%  lr: 7.27e-04  time: 50.6s *
-  Epoch 8/20 — train_loss: 0.2837  val_loss: 0.7024  val_acc: 80.37%  lr: 6.55e-04  time: 50.8s *
-  Epoch 9/20 — train_loss: 0.2543  val_loss: 0.7015  val_acc: 80.77%  lr: 5.78e-04  time: 51.2s *
-  Epoch 10/20 — train_loss: 0.2359  val_loss: 0.6999  val_acc: 81.04%  lr: 5.00e-04  time: 51.3s *
-  Epoch 11/20 — train_loss: 0.2152  val_loss: 0.6971  val_acc: 80.37%  lr: 4.22e-04  time: 51.3s *
-  Epoch 12/20 — train_loss: 0.1984  val_loss: 0.6915  val_acc: 80.51%  lr: 3.45e-04  time: 52.1s *
-  Epoch 13/20 — train_loss: 0.1848  val_loss: 0.6875  val_acc: 81.04%  lr: 2.73e-04  time: 50.5s *
-  Epoch 14/20 — train_loss: 0.1818  val_loss: 0.6868  val_acc: 81.31%  lr: 2.06e-04  time: 50.9s *
-  Epoch 15/20 — train_loss: 0.1734  val_loss: 0.6855  val_acc: 81.44%  lr: 1.46e-04  time: 51.2s *
-  Epoch 16/20 — train_loss: 0.1683  val_loss: 0.6861  val_acc: 81.04%  lr: 9.55e-05  time: 52.5s
-  Epoch 17/20 — train_loss: 0.1642  val_loss: 0.6857  val_acc: 81.31%  lr: 5.45e-05  time: 53.3s
-  Epoch 18/20 — train_loss: 0.1619  val_loss: 0.6854  val_acc: 81.31%  lr: 2.45e-05  time: 53.1s *
-  Epoch 19/20 — train_loss: 0.1621  val_loss: 0.6853  val_acc: 81.31%  lr: 6.16e-06  time: 53.3s *
-  Epoch 20/20 — train_loss: 0.1600  val_loss: 0.6854  val_acc: 81.31%  lr: 0.00e+00  time: 54.0s
-  Test accuracy: 84.40%  (top-3: 92.96%, top-5: 95.52%)
-  Metrics saved to ./results\tl_vit__flip-crop__adamw__cosine__20ep.json
-
-  Run 26/36
-
-========================================================================
-  RUN: tl_vit__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 3.5594  val_loss: 3.1321  val_acc: 43.12%  lr: 5.50e-04  time: 53.5s *
-  Epoch 2/20 — train_loss: 1.9726  val_loss: 1.3769  val_acc: 71.83%  lr: 1.00e-03  time: 53.1s *
-  Epoch 3/20 — train_loss: 1.0506  val_loss: 0.9710  val_acc: 77.30%  lr: 9.92e-04  time: 53.5s *
-  Epoch 4/20 — train_loss: 0.7349  val_loss: 0.8440  val_acc: 79.31%  lr: 9.70e-04  time: 54.1s *
-  Epoch 5/20 — train_loss: 0.5919  val_loss: 0.7794  val_acc: 79.97%  lr: 9.33e-04  time: 53.9s *
-  Epoch 6/20 — train_loss: 0.5031  val_loss: 0.7553  val_acc: 79.44%  lr: 8.83e-04  time: 53.4s *
-  Epoch 7/20 — train_loss: 0.4157  val_loss: 0.7251  val_acc: 80.51%  lr: 8.21e-04  time: 52.9s *
-  Epoch 8/20 — train_loss: 0.3655  val_loss: 0.7180  val_acc: 80.51%  lr: 7.50e-04  time: 53.2s *
-  Epoch 9/20 — train_loss: 0.3171  val_loss: 0.7076  val_acc: 80.64%  lr: 6.71e-04  time: 53.6s *
-  Epoch 10/20 — train_loss: 0.2958  val_loss: 0.6963  val_acc: 81.17%  lr: 5.87e-04  time: 53.5s *
-  Epoch 11/20 — train_loss: 0.2655  val_loss: 0.6843  val_acc: 80.24%  lr: 5.00e-04  time: 51.1s *
-  Epoch 12/20 — train_loss: 0.2410  val_loss: 0.6844  val_acc: 80.51%  lr: 4.13e-04  time: 51.1s
-  Epoch 13/20 — train_loss: 0.2275  val_loss: 0.6808  val_acc: 81.17%  lr: 3.29e-04  time: 51.0s *
-  Epoch 14/20 — train_loss: 0.2135  val_loss: 0.6784  val_acc: 81.17%  lr: 2.50e-04  time: 50.9s *
-  Epoch 15/20 — train_loss: 0.2044  val_loss: 0.6796  val_acc: 81.04%  lr: 1.79e-04  time: 51.3s
-  Epoch 16/20 — train_loss: 0.1951  val_loss: 0.6777  val_acc: 80.37%  lr: 1.17e-04  time: 51.6s *
-  Epoch 17/20 — train_loss: 0.1872  val_loss: 0.6766  val_acc: 80.64%  lr: 6.70e-05  time: 51.2s *
-  Epoch 18/20 — train_loss: 0.1956  val_loss: 0.6751  val_acc: 81.04%  lr: 3.02e-05  time: 51.0s *
-  Epoch 19/20 — train_loss: 0.1814  val_loss: 0.6754  val_acc: 81.04%  lr: 7.60e-06  time: 50.9s
-  Epoch 20/20 — train_loss: 0.1904  val_loss: 0.6753  val_acc: 81.17%  lr: 0.00e+00  time: 50.6s
-  Test accuracy: 83.76%  (top-3: 93.12%, top-5: 95.44%)
-  Metrics saved to ./results\tl_vit__flip-crop__adamw__warmup-cosine__20ep.json
-
-  Run 27/36
-
-========================================================================
-  RUN: tl_vit__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 1.9210  val_loss: 1.1592  val_acc: 72.10%  lr: 9.94e-04  time: 50.6s *
-  Epoch 2/20 — train_loss: 0.9028  val_loss: 0.9265  val_acc: 76.37%  lr: 9.76e-04  time: 50.8s *
-  Epoch 3/20 — train_loss: 0.6857  val_loss: 0.8532  val_acc: 77.44%  lr: 9.46e-04  time: 51.5s *
-  Epoch 4/20 — train_loss: 0.5630  val_loss: 0.7984  val_acc: 76.37%  lr: 9.05e-04  time: 51.4s *
-  Epoch 5/20 — train_loss: 0.4598  val_loss: 0.7718  val_acc: 79.04%  lr: 8.54e-04  time: 50.9s *
-  Epoch 6/20 — train_loss: 0.4037  val_loss: 0.7576  val_acc: 79.84%  lr: 7.94e-04  time: 52.0s *
-  Epoch 7/20 — train_loss: 0.3535  val_loss: 0.7410  val_acc: 79.71%  lr: 7.27e-04  time: 51.1s *
-  Epoch 8/20 — train_loss: 0.3131  val_loss: 0.7222  val_acc: 79.84%  lr: 6.55e-04  time: 51.0s *
-  Epoch 9/20 — train_loss: 0.2916  val_loss: 0.7209  val_acc: 79.44%  lr: 5.78e-04  time: 51.3s *
-  Epoch 10/20 — train_loss: 0.2598  val_loss: 0.7163  val_acc: 80.64%  lr: 5.00e-04  time: 51.1s *
-  Epoch 11/20 — train_loss: 0.2448  val_loss: 0.7125  val_acc: 80.37%  lr: 4.22e-04  time: 50.7s *
-  Epoch 12/20 — train_loss: 0.2234  val_loss: 0.7113  val_acc: 80.51%  lr: 3.45e-04  time: 50.7s *
-  Epoch 13/20 — train_loss: 0.2239  val_loss: 0.7132  val_acc: 79.97%  lr: 2.73e-04  time: 51.0s
-  Epoch 14/20 — train_loss: 0.2076  val_loss: 0.7108  val_acc: 80.37%  lr: 2.06e-04  time: 50.6s *
-  Epoch 15/20 — train_loss: 0.1943  val_loss: 0.7089  val_acc: 80.37%  lr: 1.46e-04  time: 51.1s *
-  Epoch 16/20 — train_loss: 0.1916  val_loss: 0.7045  val_acc: 80.24%  lr: 9.55e-05  time: 51.1s *
-  Epoch 17/20 — train_loss: 0.1929  val_loss: 0.7040  val_acc: 80.37%  lr: 5.45e-05  time: 51.3s *
-  Epoch 18/20 — train_loss: 0.1831  val_loss: 0.7040  val_acc: 80.64%  lr: 2.45e-05  time: 51.3s *
-  Epoch 19/20 — train_loss: 0.1821  val_loss: 0.7039  val_acc: 80.64%  lr: 6.16e-06  time: 50.7s *
-  Epoch 20/20 — train_loss: 0.1852  val_loss: 0.7039  val_acc: 80.64%  lr: 0.00e+00  time: 51.1s *
-  Test accuracy: 84.08%  (top-3: 93.28%, top-5: 95.44%)
-  Metrics saved to ./results\tl_vit__randaug__adamw__cosine__20ep.json
-
-  Run 28/36
-
-========================================================================
-  RUN: tl_vit__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 3.5583  val_loss: 3.1239  val_acc: 44.99%  lr: 5.50e-04  time: 50.7s *
-  Epoch 2/20 — train_loss: 2.0047  val_loss: 1.3991  val_acc: 72.10%  lr: 1.00e-03  time: 51.2s *
-  Epoch 3/20 — train_loss: 1.0753  val_loss: 0.9944  val_acc: 75.30%  lr: 9.92e-04  time: 50.9s *
-  Epoch 4/20 — train_loss: 0.7781  val_loss: 0.8640  val_acc: 78.37%  lr: 9.70e-04  time: 51.4s *
-  Epoch 5/20 — train_loss: 0.6242  val_loss: 0.8136  val_acc: 78.64%  lr: 9.33e-04  time: 50.7s *
-  Epoch 6/20 — train_loss: 0.5191  val_loss: 0.7753  val_acc: 79.71%  lr: 8.83e-04  time: 51.1s *
-  Epoch 7/20 — train_loss: 0.4350  val_loss: 0.7534  val_acc: 80.51%  lr: 8.21e-04  time: 50.6s *
-  Epoch 8/20 — train_loss: 0.3917  val_loss: 0.7410  val_acc: 79.71%  lr: 7.50e-04  time: 51.6s *
-  Epoch 9/20 — train_loss: 0.3537  val_loss: 0.7248  val_acc: 80.37%  lr: 6.71e-04  time: 51.4s *
-  Epoch 10/20 — train_loss: 0.3208  val_loss: 0.7216  val_acc: 80.91%  lr: 5.87e-04  time: 51.5s *
-  Epoch 11/20 — train_loss: 0.2911  val_loss: 0.7173  val_acc: 80.77%  lr: 5.00e-04  time: 51.1s *
-  Epoch 12/20 — train_loss: 0.2631  val_loss: 0.7079  val_acc: 81.04%  lr: 4.13e-04  time: 50.9s *
-  Epoch 13/20 — train_loss: 0.2601  val_loss: 0.7100  val_acc: 80.11%  lr: 3.29e-04  time: 51.7s
-  Epoch 14/20 — train_loss: 0.2423  val_loss: 0.7061  val_acc: 80.11%  lr: 2.50e-04  time: 51.9s *
-  Epoch 15/20 — train_loss: 0.2288  val_loss: 0.7039  val_acc: 80.24%  lr: 1.79e-04  time: 53.8s *
-  Epoch 16/20 — train_loss: 0.2182  val_loss: 0.7020  val_acc: 80.77%  lr: 1.17e-04  time: 53.1s *
-  Epoch 17/20 — train_loss: 0.2224  val_loss: 0.7004  val_acc: 80.51%  lr: 6.70e-05  time: 53.1s *
-  Epoch 18/20 — train_loss: 0.2122  val_loss: 0.7000  val_acc: 80.64%  lr: 3.02e-05  time: 52.9s *
-  Epoch 19/20 — train_loss: 0.2130  val_loss: 0.6995  val_acc: 80.64%  lr: 7.60e-06  time: 53.3s *
-  Epoch 20/20 — train_loss: 0.2096  val_loss: 0.6995  val_acc: 80.64%  lr: 0.00e+00  time: 53.3s
-  Test accuracy: 83.52%  (top-3: 93.20%, top-5: 95.68%)
-  Metrics saved to ./results\tl_vit__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 29/36
-
-========================================================================
-  RUN: tl_vit__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 2.2199  val_loss: 1.1621  val_acc: 73.56%  lr: 9.94e-04  time: 53.3s *
-  Epoch 2/20 — train_loss: 1.4044  val_loss: 0.9445  val_acc: 77.04%  lr: 9.76e-04  time: 53.3s *
-  Epoch 3/20 — train_loss: 1.1196  val_loss: 0.8498  val_acc: 78.64%  lr: 9.46e-04  time: 53.7s *
-  Epoch 4/20 — train_loss: 1.1934  val_loss: 0.8134  val_acc: 79.44%  lr: 9.05e-04  time: 53.4s *
-  Epoch 5/20 — train_loss: 1.0750  val_loss: 0.7965  val_acc: 79.97%  lr: 8.54e-04  time: 53.5s *
-  Epoch 6/20 — train_loss: 0.9644  val_loss: 0.7651  val_acc: 81.17%  lr: 7.94e-04  time: 53.4s *
-  Epoch 7/20 — train_loss: 0.9466  val_loss: 0.7541  val_acc: 80.37%  lr: 7.27e-04  time: 51.3s *
-  Epoch 8/20 — train_loss: 0.7262  val_loss: 0.7404  val_acc: 80.91%  lr: 6.55e-04  time: 51.2s *
-  Epoch 9/20 — train_loss: 0.8577  val_loss: 0.7332  val_acc: 81.04%  lr: 5.78e-04  time: 51.1s *
-  Epoch 10/20 — train_loss: 0.8782  val_loss: 0.7287  val_acc: 81.04%  lr: 5.00e-04  time: 51.0s *
-  Epoch 11/20 — train_loss: 0.8253  val_loss: 0.7349  val_acc: 81.04%  lr: 4.22e-04  time: 51.5s
-  Epoch 12/20 — train_loss: 0.7971  val_loss: 0.7247  val_acc: 80.37%  lr: 3.45e-04  time: 51.4s *
-  Epoch 13/20 — train_loss: 0.8522  val_loss: 0.7308  val_acc: 80.77%  lr: 2.73e-04  time: 51.5s
-  Epoch 14/20 — train_loss: 0.8257  val_loss: 0.7267  val_acc: 80.51%  lr: 2.06e-04  time: 51.0s
-  Epoch 15/20 — train_loss: 0.8209  val_loss: 0.7257  val_acc: 80.24%  lr: 1.46e-04  time: 51.6s
-  Epoch 16/20 — train_loss: 0.7651  val_loss: 0.7245  val_acc: 80.24%  lr: 9.55e-05  time: 50.9s *
-  Epoch 17/20 — train_loss: 0.7871  val_loss: 0.7228  val_acc: 80.24%  lr: 5.45e-05  time: 51.3s *
-  Epoch 18/20 — train_loss: 0.7942  val_loss: 0.7236  val_acc: 80.51%  lr: 2.45e-05  time: 50.8s
-  Epoch 19/20 — train_loss: 0.7067  val_loss: 0.7233  val_acc: 80.64%  lr: 6.16e-06  time: 50.9s
-  Epoch 20/20 — train_loss: 0.8128  val_loss: 0.7233  val_acc: 80.64%  lr: 0.00e+00  time: 51.0s
-  Test accuracy: 84.80%  (top-3: 93.44%, top-5: 95.60%)
-  Metrics saved to ./results\tl_vit__mixup__adamw__cosine__20ep.json
-
-  Run 30/36
-
-========================================================================
-  RUN: tl_vit__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 38,450 trainable / 85,837,106 total
-  Epoch 1/20 — train_loss: 3.6426  val_loss: 3.1776  val_acc: 40.72%  lr: 5.50e-04  time: 51.3s *
-  Epoch 2/20 — train_loss: 2.1968  val_loss: 1.4131  val_acc: 72.10%  lr: 1.00e-03  time: 51.9s *
-  Epoch 3/20 — train_loss: 1.4763  val_loss: 1.0095  val_acc: 76.50%  lr: 9.92e-04  time: 51.8s *
-  Epoch 4/20 — train_loss: 1.2725  val_loss: 0.8974  val_acc: 77.97%  lr: 9.70e-04  time: 51.2s *
-  Epoch 5/20 — train_loss: 1.0966  val_loss: 0.8224  val_acc: 78.64%  lr: 9.33e-04  time: 51.4s *
-  Epoch 6/20 — train_loss: 1.0845  val_loss: 0.8013  val_acc: 80.24%  lr: 8.83e-04  time: 50.9s *
-  Epoch 7/20 — train_loss: 1.1011  val_loss: 0.7816  val_acc: 80.64%  lr: 8.21e-04  time: 51.4s *
-  Epoch 8/20 — train_loss: 0.9779  val_loss: 0.7647  val_acc: 80.24%  lr: 7.50e-04  time: 50.8s *
-  Epoch 9/20 — train_loss: 0.7868  val_loss: 0.7568  val_acc: 81.04%  lr: 6.71e-04  time: 51.8s *
-  Epoch 10/20 — train_loss: 0.8108  val_loss: 0.7342  val_acc: 81.84%  lr: 5.87e-04  time: 51.1s *
-  Epoch 11/20 — train_loss: 0.7609  val_loss: 0.7308  val_acc: 81.17%  lr: 5.00e-04  time: 51.5s *
-  Epoch 12/20 — train_loss: 0.7926  val_loss: 0.7306  val_acc: 81.04%  lr: 4.13e-04  time: 51.4s *
-  Epoch 13/20 — train_loss: 0.7494  val_loss: 0.7210  val_acc: 81.04%  lr: 3.29e-04  time: 51.0s *
-  Epoch 14/20 — train_loss: 0.7547  val_loss: 0.7174  val_acc: 81.44%  lr: 2.50e-04  time: 52.2s *
-  Epoch 15/20 — train_loss: 0.8136  val_loss: 0.7200  val_acc: 81.17%  lr: 1.79e-04  time: 51.5s
-  Epoch 16/20 — train_loss: 0.7933  val_loss: 0.7126  val_acc: 81.44%  lr: 1.17e-04  time: 51.1s *
-  Epoch 17/20 — train_loss: 0.7848  val_loss: 0.7120  val_acc: 81.31%  lr: 6.70e-05  time: 50.9s *
-  Epoch 18/20 — train_loss: 0.8183  val_loss: 0.7110  val_acc: 81.44%  lr: 3.02e-05  time: 51.3s *
-  Epoch 19/20 — train_loss: 0.7588  val_loss: 0.7112  val_acc: 81.44%  lr: 7.60e-06  time: 50.7s
-  Epoch 20/20 — train_loss: 0.8112  val_loss: 0.7112  val_acc: 81.44%  lr: 0.00e+00  time: 51.0s
-  Test accuracy: 84.56%  (top-3: 93.76%, top-5: 95.84%)
-  Metrics saved to ./results\tl_vit__mixup__adamw__warmup-cosine__20ep.json
-
-  Run 31/36
-
-========================================================================
-  RUN: tl_ijepa__flip-crop__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-Downloading: "https://dl.fbaipublicfiles.com/ijepa/IN22K-vit.h.14-900e.pth.tar" to C:\Users\joran/.cache\torch\hub\checkpoints\IN22K-vit.h.14-900e.pth.tar
-  Parameters: 64,050 trainable / 630,826,290 total
-  Epoch 1/20 — train_loss: 2.4995  val_loss: 1.7845  val_acc: 59.41%  lr: 9.94e-04  time: 241.7s *
-  Epoch 2/20 — train_loss: 1.5040  val_loss: 1.4502  val_acc: 64.89%  lr: 9.76e-04  time: 244.8s *
-  Epoch 3/20 — train_loss: 1.2319  val_loss: 1.3054  val_acc: 67.42%  lr: 9.46e-04  time: 239.8s *
-  Epoch 4/20 — train_loss: 1.0826  val_loss: 1.2257  val_acc: 68.36%  lr: 9.05e-04  time: 226.1s *
-  Epoch 5/20 — train_loss: 0.9644  val_loss: 1.1704  val_acc: 69.69%  lr: 8.54e-04  time: 226.8s *
-  Epoch 6/20 — train_loss: 0.8855  val_loss: 1.1428  val_acc: 69.69%  lr: 7.94e-04  time: 225.5s *
-  Epoch 7/20 — train_loss: 0.8183  val_loss: 1.1006  val_acc: 71.16%  lr: 7.27e-04  time: 224.4s *
-  Epoch 8/20 — train_loss: 0.7648  val_loss: 1.0683  val_acc: 72.23%  lr: 6.55e-04  time: 225.7s *
-  Epoch 9/20 — train_loss: 0.7214  val_loss: 1.0552  val_acc: 72.36%  lr: 5.78e-04  time: 225.7s *
-  Epoch 10/20 — train_loss: 0.6875  val_loss: 1.0440  val_acc: 72.63%  lr: 5.00e-04  time: 225.5s *
-  Epoch 11/20 — train_loss: 0.6617  val_loss: 1.0302  val_acc: 72.23%  lr: 4.22e-04  time: 225.5s *
-  Epoch 12/20 — train_loss: 0.6378  val_loss: 1.0187  val_acc: 72.90%  lr: 3.45e-04  time: 224.7s *
-  Epoch 13/20 — train_loss: 0.6201  val_loss: 1.0108  val_acc: 73.30%  lr: 2.73e-04  time: 226.8s *
-  Epoch 14/20 — train_loss: 0.5974  val_loss: 1.0064  val_acc: 73.03%  lr: 2.06e-04  time: 225.0s *
-  Epoch 15/20 — train_loss: 0.5864  val_loss: 1.0023  val_acc: 72.76%  lr: 1.46e-04  time: 225.2s *
-  Epoch 16/20 — train_loss: 0.5683  val_loss: 0.9988  val_acc: 72.76%  lr: 9.55e-05  time: 238.6s *
-  Epoch 17/20 — train_loss: 0.5638  val_loss: 0.9959  val_acc: 73.30%  lr: 5.45e-05  time: 245.0s *
-  Epoch 18/20 — train_loss: 0.5652  val_loss: 0.9956  val_acc: 73.16%  lr: 2.45e-05  time: 247.4s *
-  Epoch 19/20 — train_loss: 0.5562  val_loss: 0.9950  val_acc: 73.03%  lr: 6.16e-06  time: 244.7s *
-  Epoch 20/20 — train_loss: 0.5564  val_loss: 0.9948  val_acc: 73.03%  lr: 0.00e+00  time: 245.3s *
-  Test accuracy: 76.40%  (top-3: 88.88%, top-5: 92.96%)
-  Metrics saved to ./results\tl_ijepa__flip-crop__adamw__cosine__20ep.json
-
-  Run 32/36
-
-========================================================================
-  RUN: tl_ijepa__flip-crop__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 630,826,290 total
-OpenBLAS error: Memory allocation still failed after 10 retries, giving up.
-
-=========== RESTART after OpenBLAS hang ===========
-  Using GPU: NVIDIA GeForce RTX 4060 Ti
-  CUDA: 12.6  |  PyTorch: 2.11.0+cu126
-  GPU memory: 16.0 GB
-
-Planned runs: 4
-  Models:        ['tl_ijepa']
-  Augmentations: ['randaug', 'mixup']
-  Optimizers:    ['adamw']
-  Schedulers:    ['cosine', 'warmup-cosine']
-  Epochs:        20  |  batch_size: 32  |  image_size: 224
-
-  Run 1/4
-
-========================================================================
-  RUN: tl_ijepa__randaug__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 630,826,290 total
-  Epoch 1/20 — train_loss: 2.8600  val_loss: 1.9589  val_acc: 54.47%  lr: 9.94e-04  time: 257.2s *
-  Epoch 2/20 — train_loss: 1.9118  val_loss: 1.5756  val_acc: 59.95%  lr: 9.76e-04  time: 257.4s *
-  Epoch 3/20 — train_loss: 1.5980  val_loss: 1.4152  val_acc: 63.42%  lr: 9.46e-04  time: 255.9s *
-  Epoch 4/20 — train_loss: 1.4334  val_loss: 1.3291  val_acc: 65.29%  lr: 9.05e-04  time: 255.8s *
-  Epoch 5/20 — train_loss: 1.3037  val_loss: 1.2651  val_acc: 67.82%  lr: 8.54e-04  time: 256.0s *
-  Epoch 6/20 — train_loss: 1.2235  val_loss: 1.2029  val_acc: 68.76%  lr: 7.94e-04  time: 258.1s *
-  Epoch 7/20 — train_loss: 1.1452  val_loss: 1.1907  val_acc: 69.69%  lr: 7.27e-04  time: 255.9s *
-  Epoch 8/20 — train_loss: 1.0938  val_loss: 1.1644  val_acc: 70.09%  lr: 6.55e-04  time: 257.1s *
-  Epoch 9/20 — train_loss: 1.0617  val_loss: 1.1460  val_acc: 70.89%  lr: 5.78e-04  time: 256.0s *
-  Epoch 10/20 — train_loss: 1.0256  val_loss: 1.1247  val_acc: 70.36%  lr: 5.00e-04  time: 256.2s *
-  Epoch 11/20 — train_loss: 0.9759  val_loss: 1.1189  val_acc: 69.69%  lr: 4.22e-04  time: 257.4s *
-  Epoch 12/20 — train_loss: 0.9596  val_loss: 1.1059  val_acc: 70.09%  lr: 3.45e-04  time: 255.4s *
-  Epoch 13/20 — train_loss: 0.9297  val_loss: 1.1050  val_acc: 70.09%  lr: 2.73e-04  time: 256.8s *
-  Epoch 14/20 — train_loss: 0.9060  val_loss: 1.0918  val_acc: 70.63%  lr: 2.06e-04  time: 256.0s *
-  Epoch 15/20 — train_loss: 0.9133  val_loss: 1.0925  val_acc: 70.63%  lr: 1.46e-04  time: 257.7s
-  Epoch 16/20 — train_loss: 0.9014  val_loss: 1.0847  val_acc: 70.36%  lr: 9.55e-05  time: 252.2s *
-  Epoch 17/20 — train_loss: 0.8690  val_loss: 1.0855  val_acc: 70.49%  lr: 5.45e-05  time: 256.6s
-  Epoch 18/20 — train_loss: 0.8801  val_loss: 1.0845  val_acc: 70.23%  lr: 2.45e-05  time: 252.1s *
-  Epoch 19/20 — train_loss: 0.8715  val_loss: 1.0839  val_acc: 70.23%  lr: 6.16e-06  time: 254.1s *
-  Epoch 20/20 — train_loss: 0.8691  val_loss: 1.0835  val_acc: 70.23%  lr: 0.00e+00  time: 249.3s *
-  Test accuracy: 74.40%  (top-3: 87.76%, top-5: 91.44%)
-  Metrics saved to ./results\tl_ijepa__randaug__adamw__cosine__20ep.json
-
-  Run 2/4
-
-========================================================================
-  RUN: tl_ijepa__randaug__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 630,826,290 total
-  Epoch 1/20 — train_loss: 3.7922  val_loss: 3.5124  val_acc: 20.16%  lr: 5.50e-04  time: 243.5s *
-  Epoch 2/20 — train_loss: 2.9298  val_loss: 2.2294  val_acc: 49.93%  lr: 1.00e-03  time: 246.7s *
-  Epoch 3/20 — train_loss: 2.1233  val_loss: 1.6381  val_acc: 58.61%  lr: 9.92e-04  time: 246.3s *
-  Epoch 4/20 — train_loss: 1.6932  val_loss: 1.4618  val_acc: 62.08%  lr: 9.70e-04  time: 235.9s *
-  Epoch 5/20 — train_loss: 1.4925  val_loss: 1.3536  val_acc: 65.15%  lr: 9.33e-04  time: 217.3s *
-  Epoch 6/20 — train_loss: 1.3505  val_loss: 1.2993  val_acc: 65.82%  lr: 8.83e-04  time: 215.8s *
-  Epoch 7/20 — train_loss: 1.2443  val_loss: 1.2564  val_acc: 68.49%  lr: 8.21e-04  time: 216.3s *
-  Epoch 8/20 — train_loss: 1.2014  val_loss: 1.2056  val_acc: 68.36%  lr: 7.50e-04  time: 218.5s *
-  Epoch 9/20 — train_loss: 1.1308  val_loss: 1.1921  val_acc: 69.29%  lr: 6.71e-04  time: 221.4s *
-  Epoch 10/20 — train_loss: 1.0692  val_loss: 1.1673  val_acc: 68.76%  lr: 5.87e-04  time: 218.6s *
-  Epoch 11/20 — train_loss: 1.0432  val_loss: 1.1445  val_acc: 69.56%  lr: 5.00e-04  time: 220.1s *
-  Epoch 12/20 — train_loss: 0.9988  val_loss: 1.1256  val_acc: 70.36%  lr: 4.13e-04  time: 219.3s *
-  Epoch 13/20 — train_loss: 0.9792  val_loss: 1.1144  val_acc: 70.49%  lr: 3.29e-04  time: 218.2s *
-  Epoch 14/20 — train_loss: 0.9473  val_loss: 1.1101  val_acc: 70.36%  lr: 2.50e-04  time: 213.4s *
-  Epoch 15/20 — train_loss: 0.9463  val_loss: 1.0994  val_acc: 70.63%  lr: 1.79e-04  time: 217.7s *
-  Epoch 16/20 — train_loss: 0.9310  val_loss: 1.0987  val_acc: 70.89%  lr: 1.17e-04  time: 219.9s *
-  Epoch 17/20 — train_loss: 0.9090  val_loss: 1.0962  val_acc: 70.76%  lr: 6.70e-05  time: 221.6s *
-  Epoch 18/20 — train_loss: 0.8976  val_loss: 1.0939  val_acc: 71.03%  lr: 3.02e-05  time: 219.9s *
-  Epoch 19/20 — train_loss: 0.8967  val_loss: 1.0940  val_acc: 71.03%  lr: 7.60e-06  time: 221.3s
-  Epoch 20/20 — train_loss: 0.8963  val_loss: 1.0940  val_acc: 71.03%  lr: 0.00e+00  time: 217.5s
-  Test accuracy: 74.64%  (top-3: 87.92%, top-5: 92.00%)
-  Metrics saved to ./results\tl_ijepa__randaug__adamw__warmup-cosine__20ep.json
-
-  Run 3/4
-
-========================================================================
-  RUN: tl_ijepa__mixup__adamw__cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 630,826,290 total
-  Epoch 1/20 — train_loss: 2.7937  val_loss: 1.8325  val_acc: 60.75%  lr: 9.94e-04  time: 219.5s *
-  Epoch 2/20 — train_loss: 1.9482  val_loss: 1.5040  val_acc: 64.22%  lr: 9.76e-04  time: 212.1s *
-  Epoch 3/20 — train_loss: 1.7171  val_loss: 1.3834  val_acc: 67.16%  lr: 9.46e-04  time: 213.1s *
-  Epoch 4/20 — train_loss: 1.5611  val_loss: 1.2692  val_acc: 69.29%  lr: 9.05e-04  time: 215.5s *
-  Epoch 5/20 — train_loss: 1.5628  val_loss: 1.2170  val_acc: 69.69%  lr: 8.54e-04  time: 218.0s *
-  Epoch 6/20 — train_loss: 1.4593  val_loss: 1.1811  val_acc: 71.03%  lr: 7.94e-04  time: 216.3s *
-  Epoch 7/20 — train_loss: 1.4459  val_loss: 1.1478  val_acc: 71.70%  lr: 7.27e-04  time: 215.2s *
-  Epoch 8/20 — train_loss: 1.4257  val_loss: 1.1234  val_acc: 71.96%  lr: 6.55e-04  time: 213.9s *
-  Epoch 9/20 — train_loss: 1.3596  val_loss: 1.0999  val_acc: 71.83%  lr: 5.78e-04  time: 217.1s *
-  Epoch 10/20 — train_loss: 1.3329  val_loss: 1.0837  val_acc: 72.10%  lr: 5.00e-04  time: 213.1s *
-  Epoch 11/20 — train_loss: 1.3634  val_loss: 1.0736  val_acc: 72.63%  lr: 4.22e-04  time: 215.2s *
-  Epoch 12/20 — train_loss: 1.2250  val_loss: 1.0514  val_acc: 73.83%  lr: 3.45e-04  time: 212.7s *
-  Epoch 13/20 — train_loss: 1.1626  val_loss: 1.0391  val_acc: 73.56%  lr: 2.73e-04  time: 213.0s *
-  Epoch 14/20 — train_loss: 1.2281  val_loss: 1.0446  val_acc: 73.56%  lr: 2.06e-04  time: 212.7s
-  Epoch 15/20 — train_loss: 1.2990  val_loss: 1.0331  val_acc: 73.83%  lr: 1.46e-04  time: 210.3s *
-  Epoch 16/20 — train_loss: 1.2923  val_loss: 1.0308  val_acc: 74.10%  lr: 9.55e-05  time: 202.5s *
-  Epoch 17/20 — train_loss: 1.2763  val_loss: 1.0299  val_acc: 73.43%  lr: 5.45e-05  time: 202.3s *
-  Epoch 18/20 — train_loss: 1.2696  val_loss: 1.0287  val_acc: 73.83%  lr: 2.45e-05  time: 202.1s *
-  Epoch 19/20 — train_loss: 1.1295  val_loss: 1.0278  val_acc: 73.97%  lr: 6.16e-06  time: 202.2s *
-  Epoch 20/20 — train_loss: 1.1935  val_loss: 1.0276  val_acc: 73.97%  lr: 0.00e+00  time: 202.7s *
-  Test accuracy: 76.24%  (top-3: 88.48%, top-5: 92.40%)
-  Metrics saved to ./results\tl_ijepa__mixup__adamw__cosine__20ep.json
-
-  Run 4/4
-
-========================================================================
-  RUN: tl_ijepa__mixup__adamw__warmup-cosine__20ep
-========================================================================
-  Classes: 50  |  train: 4247  val: 749  test: 1250
-  Parameters: 64,050 trainable / 630,826,290 total
-  Epoch 1/20 — train_loss: 3.7365  val_loss: 3.4277  val_acc: 26.84%  lr: 5.50e-04  time: 227.0s *
-  Epoch 2/20 — train_loss: 2.8155  val_loss: 2.1120  val_acc: 54.61%  lr: 1.00e-03  time: 216.0s *
-  Epoch 3/20 — train_loss: 2.0842  val_loss: 1.6077  val_acc: 61.55%  lr: 9.92e-04  time: 215.2s *
-  Epoch 4/20 — train_loss: 1.7825  val_loss: 1.4288  val_acc: 66.49%  lr: 9.70e-04  time: 211.9s *
-  Epoch 5/20 — train_loss: 1.6439  val_loss: 1.3289  val_acc: 68.22%  lr: 9.33e-04  time: 213.3s *
-  Epoch 6/20 — train_loss: 1.6305  val_loss: 1.2616  val_acc: 69.16%  lr: 8.83e-04  time: 205.2s *
-  Epoch 7/20 — train_loss: 1.5249  val_loss: 1.2008  val_acc: 70.49%  lr: 8.21e-04  time: 203.9s *
-  Epoch 8/20 — train_loss: 1.4194  val_loss: 1.1752  val_acc: 71.30%  lr: 7.50e-04  time: 205.6s *
-  Epoch 9/20 — train_loss: 1.4460  val_loss: 1.1303  val_acc: 72.36%  lr: 6.71e-04  time: 210.8s *
-  Epoch 10/20 — train_loss: 1.3358  val_loss: 1.1096  val_acc: 72.76%  lr: 5.87e-04  time: 206.3s *
-  Epoch 11/20 — train_loss: 1.4703  val_loss: 1.1166  val_acc: 71.83%  lr: 5.00e-04  time: 204.0s
-  Epoch 12/20 — train_loss: 1.2320  val_loss: 1.0835  val_acc: 74.10%  lr: 4.13e-04  time: 203.1s *
-  Epoch 13/20 — train_loss: 1.3003  val_loss: 1.0742  val_acc: 73.56%  lr: 3.29e-04  time: 202.3s *
-  Epoch 14/20 — train_loss: 1.3311  val_loss: 1.0618  val_acc: 73.56%  lr: 2.50e-04  time: 203.8s *
-  Epoch 15/20 — train_loss: 1.3766  val_loss: 1.0636  val_acc: 73.70%  lr: 1.79e-04  time: 202.8s
-  Epoch 16/20 — train_loss: 1.2621  val_loss: 1.0469  val_acc: 73.83%  lr: 1.17e-04  time: 203.4s *
-  Epoch 17/20 — train_loss: 1.2839  val_loss: 1.0469  val_acc: 74.23%  lr: 6.70e-05  time: 203.3s *
-  Epoch 18/20 — train_loss: 1.1948  val_loss: 1.0471  val_acc: 73.70%  lr: 3.02e-05  time: 203.3s
-  Epoch 19/20 — train_loss: 1.2283  val_loss: 1.0459  val_acc: 73.56%  lr: 7.60e-06  time: 204.9s *
-  Epoch 20/20 — train_loss: 1.2397  val_loss: 1.0455  val_acc: 73.56%  lr: 0.00e+00  time: 212.4s *
-  Test accuracy: 76.24%  (top-3: 88.88%, top-5: 92.08%)
-  Metrics saved to ./results\tl_ijepa__mixup__adamw__warmup-cosine__20ep.json
-
-========================================================================
-  RESULTS
-========================================================================
-   76.24%  tl_ijepa__mixup__adamw__cosine__20ep
-   76.24%  tl_ijepa__mixup__adamw__warmup-cosine__20ep
-   74.64%  tl_ijepa__randaug__adamw__warmup-cosine__20ep
-   74.40%  tl_ijepa__randaug__adamw__cosine__20ep
-
-Results: ./results/   Models: ./models/
-
-=========== second batch ===========

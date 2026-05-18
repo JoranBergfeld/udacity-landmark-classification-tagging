@@ -4,8 +4,9 @@ This repository holds the project to classify landmarks. The aim is to get a 60%
 
 ## How to run this project
 
-The project expects a `/data` folder in the root of this repository. I did not include it in the git tree for sake of cloning performance. You can find the data directory [here](). Place it in the root of the folder, and you should be good to go.
+This project requirements are documented in the `requirements.txt`. I leveraged `uv` to get them installed and create a `.venv`. 
 
-## Project setup
-
-This project setup is much akin to the CIFAR and MNIST projects I did before. The scripts found in the `/landmark` directory are the backbone of this project, and the [notebook](landmark.ipynb) is meant as a guide through the scripts in a visual manner. I ran the scripts overnight to get multiple results. I did include them in the [results](/results/) directory. For my findings, please consult the [results analysis writeup](./RESULTS_ANALYSIS.md).
+### Requirements
+- `uv` cli
+- `python` 3.12 was used. Others my work, but this is what used for me.
+- A GPU. While it would be possible to run with a CPU, a GPU greatly decreases the training time.

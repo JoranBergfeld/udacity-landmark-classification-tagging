@@ -1,0 +1,29 @@
+# Modernized for Python 3.12 + CUDA GPU (RTX 40-series / sm_89).
+# Reproducible with a single command:
+#   uv pip install -r requirements.txt
+#   (or) pip install -r requirements.txt
+#
+# torch/torchvision are the CUDA 12.8 builds, pulled from the PyTorch index below. 
+# The +cu128 local versions exist only on that index, so the extra-index-url is required and unambiguous.
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+
+opencv-python-headless==4.10.0.84
+matplotlib==3.9.2
+numpy==1.26.4
+pillow==10.4.0
+bokeh==3.5.2
+tqdm==4.66.5
+ipywidgets==8.1.5
+livelossplot==0.5.5
+pytest==8.3.3
+pandas==2.2.3
+seaborn==0.13.2
+
+# Running the notebooks and exporting them to HTML (jupyter nbconvert --to html).
+jupyterlab==4.5.7
+notebook==7.5.6
+ipykernel==7.2.0
+nbconvert==7.17.1

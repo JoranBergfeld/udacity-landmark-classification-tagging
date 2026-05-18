@@ -1,3 +1,11 @@
+"""
+Run-metrics persistence for the experiment-matrix pipeline.
+
+The JSON schema written here is intentionally unchanged from the original
+`landmark/` package so the existing `results/*.json` files and
+`RESULTS_ANALYSIS.md` stay consistent and can be re-loaded by the notebooks
+without rerunning any experiments.
+"""
 import json
 import os
 import torch

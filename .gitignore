@@ -5,6 +5,7 @@
 __pycache__
 *.pyc
 *.pyo
+.pytest_cache/
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
@@ -12,11 +13,18 @@ __pycache__
 # Ignore virtual environment directories
 venv/
 .venv/
+.venv-landmark/
 
 # Ignore model checkpoints and saved models. The models will flood our git history.
 models/
+
+# Ignore images which are downloaded
+landmark_images/
 
 # Notebook-generated checkpoints at repo root (we don't commit weights)
 /model_scratch.pt
 /model_transfer.pt
 /ignore.pt
+
+# Model training checkpoints 
+checkpoints/
