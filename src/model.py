@@ -1,6 +1,10 @@
+from typing import Optional, Sequence, Union
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+
+from .mrl import MRLClassifier, resolve_granularities
 
 
 # ---------------------------------------------------------------------------
@@ -37,9 +41,26 @@ class ResidualBlock(nn.Module):
 
 # define the CNN architecture
 class MyModel(nn.Module):
-    def __init__(self, num_classes: int = 1000, dropout: float = 0.3) -> None:
+    def __init__(
+        self,
+        num_classes: int = 1000,
+        dropout: float = 0.3,
+        mrl_granularities: Optional[Union[str, Sequence[int]]] = None,
+        mrl_mode: str = "mrl-e",
+    ) -> None:
+        """The rubric from-scratch model, optionally with a Matryoshka head.
 
+        When ``mrl_granularities`` is None the architecture is byte-identical
+        to the original: a single ``nn.Linear(512, num_classes)`` after the
+        global pool. When MRL is opted into, that final Linear is swapped for
+        an :class:`MRLClassifier`, which still returns a regular
+        ``[batch, num_classes]`` logits tensor at the full feature width but
+        also exposes per-prefix logits via its ``last_per_prefix_logits``
+        side channel so the training loop can compute the MRL loss.
+        """
         super().__init__()
+
+        feature_dim = 512
 
         # Stem: 224 -> 112 (stride-2 conv) -> 56 (max pool).
         self.stem = nn.Sequential(
@@ -58,11 +79,21 @@ class MyModel(nn.Module):
 
         self.pool = nn.AdaptiveAvgPool2d(1)
 
-        self.classifier = nn.Sequential(
-            nn.Flatten(),
-            nn.Dropout(dropout),
-            nn.Linear(512, num_classes),
-        )
+        if mrl_granularities is None:
+            self.mrl_head: Optional[MRLClassifier] = None
+            self.classifier = nn.Sequential(
+                nn.Flatten(),
+                nn.Dropout(dropout),
+                nn.Linear(feature_dim, num_classes),
+            )
+        else:
+            resolved = resolve_granularities(mrl_granularities, feature_dim)
+            self.mrl_head = MRLClassifier(feature_dim, num_classes, resolved, mode=mrl_mode)
+            self.classifier = nn.Sequential(
+                nn.Flatten(),
+                nn.Dropout(dropout),
+                self.mrl_head,
+            )
 
     def _make_layer(self, in_channels, out_channels, num_blocks, stride):
         layers = [ResidualBlock(in_channels, out_channels, stride)]
@@ -91,8 +122,23 @@ class MyModel(nn.Module):
 # ---------------------------------------------------------------------------
 
 class ScratchResNet(nn.Module):
-    def __init__(self, num_classes: int = 1000, dropout: float = 0.3) -> None:
+    def __init__(
+        self,
+        num_classes: int = 1000,
+        dropout: float = 0.3,
+        mrl_granularities: Optional[Union[str, Sequence[int]]] = None,
+        mrl_mode: str = "mrl-e",
+    ) -> None:
+        """Deeper from-scratch ResNet variant, optionally with a Matryoshka head.
+
+        Same MRL contract as :class:`MyModel`: leave ``mrl_granularities``
+        unset to preserve the original behavior, or pass a schedule (or
+        ``"auto"``) to swap the final ``nn.Linear`` for an
+        :class:`MRLClassifier` and have the model expose ``.mrl_head``.
+        """
         super().__init__()
+
+        feature_dim = 512
 
         self.stem = nn.Sequential(
             nn.Conv2d(3, 64, 7, stride=2, padding=3, bias=False),
@@ -108,7 +154,16 @@ class ScratchResNet(nn.Module):
 
         self.pool = nn.AdaptiveAvgPool2d(1)
         self.dropout = nn.Dropout(dropout)
-        self.fc = nn.Linear(512, num_classes)
+
+        if mrl_granularities is None:
+            self.mrl_head: Optional[MRLClassifier] = None
+            self.fc: nn.Module = nn.Linear(feature_dim, num_classes)
+        else:
+            resolved = resolve_granularities(mrl_granularities, feature_dim)
+            self.mrl_head = MRLClassifier(feature_dim, num_classes, resolved, mode=mrl_mode)
+            # The MRLClassifier returns the full-prefix logits as a Tensor,
+            # so it is API-compatible with the original ``self.fc`` Linear.
+            self.fc = self.mrl_head
 
     def _make_layer(self, in_channels, out_channels, num_blocks, stride):
         layers = [ResidualBlock(in_channels, out_channels, stride)]
@@ -133,10 +188,26 @@ MODEL_REGISTRY = {
 }
 
 
-def get_scratch_model(name="scratch_cnn", num_classes: int = 1000, dropout: float = 0.3):
+def get_scratch_model(
+    name: str = "scratch_cnn",
+    num_classes: int = 1000,
+    dropout: float = 0.3,
+    mrl_granularities: Optional[Union[str, Sequence[int]]] = None,
+    mrl_mode: str = "mrl-e",
+):
+    """Build a from-scratch model, optionally with an MRL head.
+
+    The MRL kwargs flow through unchanged so the experiment runner can opt
+    a single run into MRL without disturbing other runs in the same matrix.
+    """
     if name not in MODEL_REGISTRY:
         raise ValueError(f"Unknown model: {name}. Choose from {list(MODEL_REGISTRY)}")
-    return MODEL_REGISTRY[name](num_classes=num_classes, dropout=dropout)
+    return MODEL_REGISTRY[name](
+        num_classes=num_classes,
+        dropout=dropout,
+        mrl_granularities=mrl_granularities,
+        mrl_mode=mrl_mode,
+    )
 
 
 ######################################################################################
@@ -168,3 +239,35 @@ def test_model_construction(data_loaders):
     assert out.shape == torch.Size(
         [2, 23]
     ), f"Expected an output tensor of size (2, 23), got {out.shape}"
+
+
+def test_model_construction_with_mrl(data_loaders):
+    """An MRL-enabled MyModel still returns full-prefix logits and exposes per-prefix logits.
+
+    The point is the side-channel contract: forward returns the same shape
+    as the vanilla head, but the model now also surfaces ``mrl_head`` with
+    one entry per requested granularity stored in its side channel.
+    """
+    granularities = [8, 32, 128, 512]
+    model = MyModel(
+        num_classes=23,
+        dropout=0.3,
+        mrl_granularities=granularities,
+        mrl_mode="mrl-e",
+    )
+
+    assert model.mrl_head is not None
+    assert model.mrl_head.granularities == granularities
+
+    dataiter = iter(data_loaders["train"])
+    images, _ = next(dataiter)
+
+    out = model(images)
+
+    assert isinstance(out, torch.Tensor)
+    assert out.shape == torch.Size([2, 23])
+
+    per_prefix = model.mrl_head.last_per_prefix_logits
+    assert set(per_prefix.keys()) == set(granularities)
+    for m in granularities:
+        assert per_prefix[m].shape == torch.Size([2, 23])

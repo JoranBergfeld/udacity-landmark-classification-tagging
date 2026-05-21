@@ -45,6 +45,11 @@ def save_run_metrics(run_name, metrics, eval_results, config, save_dir="./result
             "per_class_accuracy": eval_results["per_class_accuracy"],
         },
     }
+    # MRL runs report top-1 accuracy at every nested prefix width. Persist it
+    # under "evaluation" so the existing analysis tooling can pick it up
+    # without learning a new top-level key.
+    if "per_granularity_accuracy" in eval_results:
+        data["evaluation"]["per_granularity_accuracy"] = eval_results["per_granularity_accuracy"]
     with open(path, "w") as f:
         json.dump(data, f, indent=2)
     print(f"Metrics saved to {path}")
