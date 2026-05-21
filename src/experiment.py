@@ -28,6 +28,7 @@ from src.transfer import TRANSFER_BACKBONES, get_model_transfer_learning
 from src.optimization import get_loss, get_optimizer, create_scheduler, PLATEAU_SCHEDULERS
 from src.evaluate import evaluate_model
 from src.save import save_run_metrics
+from src.mrl import MRL_MODES, MRLLoss, parse_mrl_granularities_argument
 
 
 # Map experiment run-name keys to builders, keeping the same naming the
@@ -54,12 +55,31 @@ def default_learning_rate(optimizer_name):
     return 1e-3 if optimizer_name in ("adam", "adamw") else 1e-2
 
 
-def build_model(model_key, num_classes):
+def build_model(model_key, num_classes, mrl_granularities=None, mrl_mode="mrl-e"):
+    """Build the requested model, threading MRL kwargs to scratch backbones only.
+
+    Transfer-learning backbones intentionally do not support MRL yet -- the
+    head-replacement helper in ``src/transfer.py`` is family-aware and
+    adapting it is a separate change. If MRL is requested for a transfer
+    model we print a warning and fall back to the vanilla head so the run
+    still completes.
+    """
     if model_key not in MODEL_SPECS:
         raise ValueError(f"Unknown model: {model_key}. Choose from {list(MODEL_SPECS)}")
     kind, name = MODEL_SPECS[model_key]
     if kind == "scratch":
-        return get_scratch_model(name, num_classes=num_classes, dropout=0.5)
+        return get_scratch_model(
+            name,
+            num_classes=num_classes,
+            dropout=0.5,
+            mrl_granularities=mrl_granularities,
+            mrl_mode=mrl_mode,
+        )
+    if mrl_granularities is not None:
+        print(
+            f"Warning: MRL is not yet wired up for transfer models ({model_key}); "
+            "falling back to the vanilla classifier head."
+        )
     return get_model_transfer_learning(name, n_classes=num_classes)
 
 
@@ -81,9 +101,24 @@ def _validate(model, val_loader, criterion, device):
 
 
 def train_with_metrics(model, train_loader, val_loader, epochs, optimizer, scheduler, scheduler_name, device, checkpoint_path=None):
-    """Compact training loop that records the per-epoch history save.py expects."""
+    """Compact training loop that records the per-epoch history save.py expects.
+
+    Auto-detects an MRL head on the model: if ``model.mrl_head`` is set,
+    training uses :class:`MRLLoss` (summed CE across all nested prefixes).
+    Validation loss is always computed with plain ``nn.CrossEntropyLoss`` on
+    the full-prefix logits so the reported ``val_loss`` stays directly
+    comparable between MRL and non-MRL runs.
+    """
     model = model.to(device)
-    criterion = nn.CrossEntropyLoss()
+    eval_criterion = nn.CrossEntropyLoss()
+    mrl_head = getattr(model, "mrl_head", None)
+    if mrl_head is not None:
+        criterion = MRLLoss(mrl_head)
+        print(
+            f"MRL training enabled (mode={mrl_head.mode}, granularities={mrl_head.granularities})"
+        )
+    else:
+        criterion = eval_criterion
 
     metrics = {
         "train_loss": [],
@@ -115,7 +150,7 @@ def train_with_metrics(model, train_loader, val_loader, epochs, optimizer, sched
             seen += images.size(0)
 
         train_loss = running_loss / max(1, seen)
-        val_loss, val_accuracy = _validate(model, val_loader, criterion, device)
+        val_loss, val_accuracy = _validate(model, val_loader, eval_criterion, device)
 
         if scheduler is not None:
             if is_plateau:
@@ -160,9 +195,48 @@ def get_device():
     return device
 
 
-def run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, batch_size, save_dir, results_dir, device, num_workers=2, learning_rate=None):
+def _evaluate_per_granularity(model, test_loader, device):
+    """Compute top-1 accuracy at every MRL granularity for the test set.
+
+    Re-iterates the test loader to read the side-channel ``last_per_prefix_logits``
+    populated by the model's forward at each batch. Returns a dict keyed by
+    the granularity stringified for JSON compatibility, with float percentages.
+    """
+    mrl_head = model.mrl_head
+    correct = {m: 0 for m in mrl_head.granularities}
+    total = 0
+    model.eval()
+    with torch.no_grad():
+        for images, labels in test_loader:
+            images = images.to(device)
+            labels_device = labels.to(device)
+            _ = model(images)
+            for m, logits in mrl_head.last_per_prefix_logits.items():
+                preds = logits.argmax(dim=1)
+                correct[m] += (preds == labels_device).sum().item()
+            total += labels.size(0)
+    return {str(m): 100.0 * correct[m] / max(1, total) for m in mrl_head.granularities}
+
+
+def run_single(
+    model_key,
+    augmentation,
+    optimizer_name,
+    scheduler_name,
+    epochs,
+    batch_size,
+    save_dir,
+    results_dir,
+    device,
+    num_workers=2,
+    learning_rate=None,
+    mrl_granularities=None,
+    mrl_mode="mrl-e",
+):
 
     run_name = make_run_name(model_key, augmentation, optimizer_name, scheduler_name, epochs)
+    if mrl_granularities is not None:
+        run_name = f"{run_name}__mrl-{mrl_mode}"
     print(f"\nRun: {run_name}")
 
     if learning_rate is None:
@@ -173,7 +247,7 @@ def run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, 
     num_classes = len(classes)
     print(f"Classes: {num_classes}")
 
-    model = build_model(model_key, num_classes)
+    model = build_model(model_key, num_classes, mrl_granularities=mrl_granularities, mrl_mode=mrl_mode)
 
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     total = sum(p.numel() for p in model.parameters())
@@ -190,6 +264,14 @@ def run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, 
     accuracy = eval_results["overall_accuracy"]
     print(f"Test accuracy: {accuracy:.2f}%")
 
+    mrl_head = getattr(model, "mrl_head", None)
+    if mrl_head is not None:
+        per_g = _evaluate_per_granularity(model, data_loaders["test"], device)
+        print("Per-granularity test accuracy:")
+        for m_str, acc in per_g.items():
+            print(f"  m={m_str}: {acc:.2f}%")
+        eval_results["per_granularity_accuracy"] = per_g
+
     config = {
         "model": model_key,
         "augmentation": augmentation,
@@ -201,6 +283,11 @@ def run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, 
         "trainable_parameters": trainable,
         "total_parameters": total,
     }
+    if mrl_head is not None:
+        config["mrl"] = {
+            "mode": mrl_head.mode,
+            "granularities": list(mrl_head.granularities),
+        }
     save_run_metrics(run_name, metrics, eval_results, config, save_dir=results_dir)
 
     del model, optimizer, scheduler
@@ -210,8 +297,26 @@ def run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, 
     return run_name, accuracy
 
 
-def run_matrix(models, augmentations, optimizers, schedulers, epochs=20, batch_size=32, save_dir="./models", results_dir="./results", num_workers=2, learning_rate=None):
-    """Train + evaluate the cartesian product. Importable from the notebooks."""
+def run_matrix(
+    models,
+    augmentations,
+    optimizers,
+    schedulers,
+    epochs=20,
+    batch_size=32,
+    save_dir="./models",
+    results_dir="./results",
+    num_workers=2,
+    learning_rate=None,
+    mrl_granularities=None,
+    mrl_mode="mrl-e",
+):
+    """Train + evaluate the cartesian product. Importable from the notebooks.
+
+    ``mrl_granularities`` is shared across the matrix: pass it in to opt the
+    whole sweep into the same MRL configuration, or leave it ``None`` for
+    the standard vanilla-head behavior.
+    """
     device = get_device()
     combinations = list(itertools.product(models, augmentations, optimizers, schedulers))
 
@@ -221,11 +326,27 @@ def run_matrix(models, augmentations, optimizers, schedulers, epochs=20, batch_s
     for i, (model_key, augmentation, optimizer_name, scheduler_name) in enumerate(combinations, 1):
         print(f"\nRun {i}/{len(combinations)}")
         try:
-            run_name, accuracy = run_single(model_key, augmentation, optimizer_name, scheduler_name, epochs, batch_size, save_dir, results_dir, device, num_workers=num_workers, learning_rate=learning_rate)
+            run_name, accuracy = run_single(
+                model_key,
+                augmentation,
+                optimizer_name,
+                scheduler_name,
+                epochs,
+                batch_size,
+                save_dir,
+                results_dir,
+                device,
+                num_workers=num_workers,
+                learning_rate=learning_rate,
+                mrl_granularities=mrl_granularities,
+                mrl_mode=mrl_mode,
+            )
             summary.append((run_name, accuracy))
         except Exception as exc:
             print(f"Run failed: {exc!r}")
             failed_name = make_run_name(model_key, augmentation, optimizer_name, scheduler_name, epochs)
+            if mrl_granularities is not None:
+                failed_name = f"{failed_name}__mrl-{mrl_mode}"
             summary.append((failed_name, float("nan")))
 
     summary.sort(key=lambda pair: pair[1] if pair[1] == pair[1] else -1, reverse=True)
@@ -249,7 +370,27 @@ def main():
     parser.add_argument("--num-workers", type=int, default=2)
     parser.add_argument("--save-dir", type=str, default="./models")
     parser.add_argument("--results-dir", type=str, default="./results")
+    parser.add_argument(
+        "--mrl-granularities",
+        type=str,
+        default=None,
+        help=(
+            "Opt into Matryoshka Representation Learning. "
+            "'none' (or omitted) disables it. 'auto' uses the default log-spaced "
+            "schedule (8,16,32,...,feature_dim). Or pass an explicit list like "
+            "'8,32,128,512'. Applies to scratch backbones only."
+        ),
+    )
+    parser.add_argument(
+        "--mrl-mode",
+        type=str,
+        default="mrl-e",
+        choices=list(MRL_MODES),
+        help="MRL head variant: 'mrl-e' (shared, default) or 'mrl' (independent heads).",
+    )
     arguments = parser.parse_args()
+
+    mrl_granularities = parse_mrl_granularities_argument(arguments.mrl_granularities)
 
     run_matrix(
         arguments.models,
@@ -262,6 +403,8 @@ def main():
         results_dir=arguments.results_dir,
         num_workers=arguments.num_workers,
         learning_rate=arguments.learning_rate,
+        mrl_granularities=mrl_granularities,
+        mrl_mode=arguments.mrl_mode,
     )
 
 
